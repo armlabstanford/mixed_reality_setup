@@ -19,7 +19,7 @@
     <meta-data android:name="com.google.ar.core" android:value="required" />
     <meta-data android:name="unity.tango-enable" android:value="True" />
     <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true" />
-    <meta-data android:name="unity.build-id" android:value="0f6003ec-4d0a-4a2d-a425-ca630a479edc" />
+    <meta-data android:name="unity.build-id" android:value="0d6e6cac-8f28-4655-9271-eeeaca6b0408" />
     <meta-data android:name="unity.splash-mode" android:value="0" />
     <meta-data android:name="unity.splash-enable" android:value="True" />
   </application>
