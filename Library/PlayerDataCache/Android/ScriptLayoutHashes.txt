@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-/home/manuel/Unity/ARCore-ARM-v1/ManipulationARCore2.apk
+/home/manuel/Unity/ARCore-ARM-v1/ManipulationARCore3.apk
 SceneListBegin?
 Assets/GoogleARCore/Examples/ObjectManipulation/Scenes/ObjectManipulation.unity
 SceneListEnd?
@@ -66,6 +66,8 @@ abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.Tou
 d3c76b14a25eebd3a3323dd43297919c Unity.TextMeshPro.dll:TMPro.TMP_InputField
 b300185396ca1e0231bd4f070140561c Assembly-CSharp.dll:RosSharp.RosBridgeClient.PoseStampedPublisher
 febfb1502f3a7d3d25fe0694a27ac6e7 Assembly-CSharp.dll:GoogleARCore.Examples.CloudAnchors.NetworkManagerUIController
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 4cb443ffb7b54a755d9852ae91684f7d Assembly-CSharp.dll:GoogleARCore.Examples.ComputerVision.ComputerVisionController
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
