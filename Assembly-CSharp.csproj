@@ -292,6 +292,7 @@
      <Compile Include="Assets\RosSharp\Scripts\Urdf\UrdfComponents\UrdfRobot.cs" />
      <Compile Include="Assets\RosSharp\Scripts\Urdf\UrdfComponents\UrdfVisual.cs" />
      <Compile Include="Assets\RosSharp\Scripts\Urdf\UrdfComponents\UrdfVisuals.cs" />
+     <Compile Include="Assets\SelectionManager.cs" />
      <None Include="Assets\GoogleARCore\Examples\Common\Materials\Shaders\PlaneGrid.shader" />
      <None Include="Assets\RosSharp\Plugins\Newtonsoft.Json.xml" />
      <None Include="Assets\GoogleARCore\Examples\Common\Materials\Shaders\MobileDiffuseWithLightEstimation.shader" />
