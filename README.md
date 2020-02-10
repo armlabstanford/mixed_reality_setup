@@ -40,7 +40,7 @@ Note: If you already have Windows 10 installed in your machine, you can simply u
    - Click on **Create Virtual Machine**.
    - Remember the username and password that you set as it will be required later on.
    
-   **IMPORTANT**: While you are setting up Ubuntu, **DO NOT** select the *Log In Automatically option* when creating your user account. If you are confused, check out this [link](https://www.zdnet.com/article/windows-10-tip-run-ubuntu-linux-in-an-enhanced-hyper-v-session/) for a screenshot. 
+   **IMPORTANT**: While you are setting up Ubuntu, **DO NOT** select the *Log In Automatically* option when creating your user account. If you are confused, check out this [link](https://www.zdnet.com/article/windows-10-tip-run-ubuntu-linux-in-an-enhanced-hyper-v-session/) for a screenshot. 
    
 5. Starting your virtual machine
    - When you connect to Ubuntu, a prompt for the **Display configuration** will appear. Leaving it as **1366 by 768 pixels** is fine.
@@ -54,6 +54,21 @@ Note: If you already have Windows 10 installed in your machine, you can simply u
 7. Setting up ROS on Ubuntu
    - Follow this [link](http://wiki.ros.org/melodic/Installation/Ubuntu) to install ROS on your virtual machine.
 
-8. Configure your ROS environment
+8. Configuring your ROS environment
    - Follow this [link](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment) to set up your `catkin_ws`.
 
+9. Setting up [Gazebo](http://gazebosim.org/)
+```
+$ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+$ wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+$ sudo apt-get update
+$ sudo apt-get install gazebo9
+$ sudo apt upgrade
+```
+
+10. Installing `rosbridge-suite`
+   ```
+   $ sudo apt-get install ros-kinetic-rosbridge-server
+   $ git clone https://github.com/siemens/ros-sharp.git ~/Desktop/ros-sharp
+   ```
+   - Place the `file_server` package (found under `Desktop/ros-sharp/ros`) in the `src` folder of your Catkin workspace, then build by running `$ catkin_make` from the root folder of your catkin workspace. (Your catkin workspace is found in the home directory of the Ubuntu VM, and is usually called catkin_ws).
