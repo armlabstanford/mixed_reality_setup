@@ -1,11 +1,20 @@
 # Setting Up ROS-Unity-Hololens
 1. Requirements for using [Hololens](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator) 1 or 2 emulator:
-   -  You do need a windows system to be able to compile.
+   - **Requirements**: Windows 10 Enterprise, Pro, or Education
+	- Windows 10 Home will NOT work because [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/) is required for Hololens Emulator.
+	- If you are from Stanford, you can obtain a free copy of Windows 10 Education from [here](https://stanford.onthehub.com/WebStore/Welcome.aspx). Sign in (top right) with your SUNet ID and search for "windows 10 education" in the top box. Add to cart and check out, you should obtain a product key.
+
+Note: If you already have Windows 10 installed in your machine, you can simply upgrade to Windows 10 Education by manually entering in the product key as listed [here](https://docs.microsoft.com/en-us/windows/deployment/upgrade/windows-10-edition-upgrades#upgrade-by-manually-entering-a-product-key).
+
+2. [Turning on Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v#enable-the-hyper-v-role-through-settings)
+   - Under Windows search, type **Turn Windows Features on or off**.
+   - Select **Hyper-V** and click **OK**.
+   - You should be prompted to restart your Windows.
    -  You need to have Hyper-V enabled to be able to run the emulator so do not use a virtual machine. It will not work. [Why?](https://seriouscodeblog.wordpress.com/2017/02/21/and-you-can-write-hololens-apps-in-macos-linux-too-part-1/)
    -  To enable Hyper-V go to windows search and type: "Turn Windows features on or off" and enable Hyper-V
    -  Make sure to enable virtualization in the BIOS of your windows machine.
 		
-2. Follow tool instructions one by one. If one of them fails there is something going wrong: 
+3. Follow tool instructions one by one. If one of them fails there is something going wrong: 
    -  https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools
    -  Once you install the emulator successfully, go to visual studio 2019. Getting to this point is the hardest part. Create a new project using DirectX 11 as shown below:
    <a href="https://ibb.co/vDWKZLj"><img src="https://i.ibb.co/qx8Pkmr/VS2019.png" alt="VS2019" border="0"></a>
@@ -13,7 +22,7 @@
    - Follow the instructions of these [video](https://www.youtube.com/watch?v=0ImaZ_Aqe3I) Minute 2:00 to pull up the emulator.
 		
 		
-3. When installing Unity use the 2018.4 version to avoid conflicts: 
+4. When installing Unity use the 2018.4 version to avoid conflicts: 
    - Install [Unity](https://unity3d.com/unity/qa/lts-releases?version=2018.4)
    - Install [Unity Hub](https://unity3d.com/get-unity/download ). Good interface to install dependencies: 
    - Get [Unity setup for hololens](https://www.youtube.com/watch?v=OYx4qIqi0oI). The video does not show you everything, but the narrator does explain the process properly. **NOTE:** UWP = Windows Store
