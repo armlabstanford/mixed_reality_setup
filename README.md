@@ -1,6 +1,3 @@
-# Setting Up ROS-Unity-Hololens
-
-
 ## Getting Started with ARCORE-Unity-Android Development
 
 This tutorial will guide you through how to develop apps based on Unity for Android Arcore compatible devices to emulate AR Objects. At the end of this tutorial you should be able to control objects as show in the video below:
