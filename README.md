@@ -1,4 +1,36 @@
 # Setting Up ROS-Unity-Hololens
+1. Requirements for using [Hololens](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator) 1 or 2 emulator:
+   -  You do need a windows system to be able to compile.
+   -  You need to have Hyper-V enabled to be able to run the emulator so do not use a virtual machine. It will not work. [Why?](https://seriouscodeblog.wordpress.com/2017/02/21/and-you-can-write-hololens-apps-in-macos-linux-too-part-1/)
+   -  To enable Hyper-V go to windows search and type: "Turn Windows features on or off" and enable Hyper-V
+   -  Make sure to enable virtualization in the BIOS of your windows machine.
+		
+2. Follow tool instructions one by one. If one of them fails there is something going wrong: 
+   -  https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools
+   -  Once you install the emulator successfully, go to visual studio 2019. Getting to this point is the hardest part. Create a new project using DirectX 11 as shown below:
+   <a href="https://ibb.co/vDWKZLj"><img src="https://i.ibb.co/qx8Pkmr/VS2019.png" alt="VS2019" border="0"></a>
+   - If the option does not appear you are missing libraries. Launch the Visual studio installer and add the proper workloads. Refer to the [link](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools) in the **Visual Studio Workloads** section. 
+   - Follow the instructions of these [video](https://www.youtube.com/watch?v=0ImaZ_Aqe3I) Minute 2:00 to pull up the emulator.
+		
+		
+3. When installing Unity use the 2018.4 version to avoid conflicts: 
+   - Install [Unity](https://unity3d.com/unity/qa/lts-releases?version=2018.4)
+   - Install [Unity Hub](https://unity3d.com/get-unity/download ). Good interface to install dependencies: 
+   - Get [Unity setup for hololens](https://www.youtube.com/watch?v=OYx4qIqi0oI). The video does not show you everything, but the narrator does explain the process properly. **NOTE:** UWP = Windows Store
+   - Install [Mixed Reality Toolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases) packages:
+   - Create a new project in unity.
+	- In Unity select Assets, Import Package, Custom package (selected the downloaded package)
+	- Follow this strict order else it will not work:
+			Under Assets, [download](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/tag/v2.2.0):
+      - Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage
+      - (Optional) Microsoft.MixedRealityToolkit.Unity.Extensions.unitypackage
+      - (Optional) Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage
+      - (Optional) Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage
+      - (Optional, ExperimentalMicrosoft.MixedRealityToolkit.Unity.Providers.UnityAR.unitypackage
+	
+			
+   - For unity tutorials I recommend this [series](https://www.youtube.com/watch?v=pTLCMZ_qvTw&list=PLGmYIROty-5bpzKQNK3mRMi4pmh_LinV4&index=1).
+
 
 
 ## Getting Started with ARCORE-Unity-Android Development
