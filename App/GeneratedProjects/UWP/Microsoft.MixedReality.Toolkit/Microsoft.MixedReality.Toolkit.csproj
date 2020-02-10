@@ -1,0 +1,1524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(ProjectDir)..\..\..\UnityCommon.props" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{91e6059d-ec0e-4ff7-8724-657b58a03b3a}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AssemblyCSharpWSA</RootNamespace>
+    <AssemblyName>Microsoft.MixedReality.Toolkit</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.18362.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <BaseIntermediateOutputPath>obj\x86\Debug\</BaseIntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE;ENABLE_PROFILER;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2018_4_16;UNITY_2018_4;UNITY_2018;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_METRO;UNITY_METRO;UNITY_METRO_API;UNITY_WSA;UNITY_WINRT_10_0;PLATFORM_WINRT;UNITY_WINRT;ENABLE_WINRT_PINVOKE;ENABLE_LAZY_METHOD_CACHING;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_NETWORK;ENABLE_EVENT_QUEUE;UNITY_PLATFORM_THREAD_TO_CORE_MAPPING;ENABLE_SUBSTANCE;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;CURL_STATICLIB;ENABLE_VR;ENABLE_AR;PLATFORM_OVERRIDES_APPLICATION_PACKAGE_NAME;ENABLE_DOTNET;DOTNETWINRT_PRESENT;NETFX_CORE;ENABLE_WINMD_SUPPORT;WINDOWS_UWP;UNITY_UWP;UNITY_WSA_10_0;</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <BaseIntermediateOutputPath>obj\x86\Release\</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE;ENABLE_PROFILER;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2018_4_16;UNITY_2018_4;UNITY_2018;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_METRO;UNITY_METRO;UNITY_METRO_API;UNITY_WSA;UNITY_WINRT_10_0;PLATFORM_WINRT;UNITY_WINRT;ENABLE_WINRT_PINVOKE;ENABLE_LAZY_METHOD_CACHING;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_NETWORK;ENABLE_EVENT_QUEUE;UNITY_PLATFORM_THREAD_TO_CORE_MAPPING;ENABLE_SUBSTANCE;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;CURL_STATICLIB;ENABLE_VR;ENABLE_AR;PLATFORM_OVERRIDES_APPLICATION_PACKAGE_NAME;ENABLE_DOTNET;DOTNETWINRT_PRESENT;NETFX_CORE;ENABLE_WINMD_SUPPORT;WINDOWS_UWP;UNITY_UWP;UNITY_WSA_10_0;</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Master|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Master\</OutputPath>
+    <BaseIntermediateOutputPath>obj\x86\Master\</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2018_4_16;UNITY_2018_4;UNITY_2018;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_METRO;UNITY_METRO;UNITY_METRO_API;UNITY_WSA;UNITY_WINRT_10_0;PLATFORM_WINRT;UNITY_WINRT;ENABLE_WINRT_PINVOKE;ENABLE_LAZY_METHOD_CACHING;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_NETWORK;ENABLE_EVENT_QUEUE;UNITY_PLATFORM_THREAD_TO_CORE_MAPPING;ENABLE_SUBSTANCE;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;CURL_STATICLIB;ENABLE_VR;ENABLE_AR;PLATFORM_OVERRIDES_APPLICATION_PACKAGE_NAME;ENABLE_DOTNET;DOTNETWINRT_PRESENT;NETFX_CORE;ENABLE_WINMD_SUPPORT;WINDOWS_UWP;UNITY_UWP;UNITY_WSA_10_0;</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <BaseIntermediateOutputPath>obj\x64\Debug\</BaseIntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE;ENABLE_PROFILER;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2018_4_16;UNITY_2018_4;UNITY_2018;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_METRO;UNITY_METRO;UNITY_METRO_API;UNITY_WSA;UNITY_WINRT_10_0;PLATFORM_WINRT;UNITY_WINRT;ENABLE_WINRT_PINVOKE;ENABLE_LAZY_METHOD_CACHING;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_NETWORK;ENABLE_EVENT_QUEUE;UNITY_PLATFORM_THREAD_TO_CORE_MAPPING;ENABLE_SUBSTANCE;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;CURL_STATICLIB;ENABLE_VR;ENABLE_AR;PLATFORM_OVERRIDES_APPLICATION_PACKAGE_NAME;ENABLE_DOTNET;DOTNETWINRT_PRESENT;NETFX_CORE;ENABLE_WINMD_SUPPORT;WINDOWS_UWP;UNITY_UWP;UNITY_WSA_10_0;</DefineConstants>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <BaseIntermediateOutputPath>obj\x64\Release\</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE;ENABLE_PROFILER;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2018_4_16;UNITY_2018_4;UNITY_2018;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_METRO;UNITY_METRO;UNITY_METRO_API;UNITY_WSA;UNITY_WINRT_10_0;PLATFORM_WINRT;UNITY_WINRT;ENABLE_WINRT_PINVOKE;ENABLE_LAZY_METHOD_CACHING;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_NETWORK;ENABLE_EVENT_QUEUE;UNITY_PLATFORM_THREAD_TO_CORE_MAPPING;ENABLE_SUBSTANCE;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;CURL_STATICLIB;ENABLE_VR;ENABLE_AR;PLATFORM_OVERRIDES_APPLICATION_PACKAGE_NAME;ENABLE_DOTNET;DOTNETWINRT_PRESENT;NETFX_CORE;ENABLE_WINMD_SUPPORT;WINDOWS_UWP;UNITY_UWP;UNITY_WSA_10_0;</DefineConstants>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Master|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x64\Master\</OutputPath>
+    <BaseIntermediateOutputPath>obj\x64\Master\</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2018_4_16;UNITY_2018_4;UNITY_2018;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_METRO;UNITY_METRO;UNITY_METRO_API;UNITY_WSA;UNITY_WINRT_10_0;PLATFORM_WINRT;UNITY_WINRT;ENABLE_WINRT_PINVOKE;ENABLE_LAZY_METHOD_CACHING;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_NETWORK;ENABLE_EVENT_QUEUE;UNITY_PLATFORM_THREAD_TO_CORE_MAPPING;ENABLE_SUBSTANCE;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;CURL_STATICLIB;ENABLE_VR;ENABLE_AR;PLATFORM_OVERRIDES_APPLICATION_PACKAGE_NAME;ENABLE_DOTNET;DOTNETWINRT_PRESENT;NETFX_CORE;ENABLE_WINMD_SUPPORT;WINDOWS_UWP;UNITY_UWP;UNITY_WSA_10_0;</DefineConstants>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <BaseIntermediateOutputPath>obj\ARM\Debug\</BaseIntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE;ENABLE_PROFILER;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2018_4_16;UNITY_2018_4;UNITY_2018;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_METRO;UNITY_METRO;UNITY_METRO_API;UNITY_WSA;UNITY_WINRT_10_0;PLATFORM_WINRT;UNITY_WINRT;ENABLE_WINRT_PINVOKE;ENABLE_LAZY_METHOD_CACHING;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_NETWORK;ENABLE_EVENT_QUEUE;UNITY_PLATFORM_THREAD_TO_CORE_MAPPING;ENABLE_SUBSTANCE;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;CURL_STATICLIB;ENABLE_VR;ENABLE_AR;PLATFORM_OVERRIDES_APPLICATION_PACKAGE_NAME;ENABLE_DOTNET;DOTNETWINRT_PRESENT;NETFX_CORE;ENABLE_WINMD_SUPPORT;WINDOWS_UWP;UNITY_UWP;UNITY_WSA_10_0;</DefineConstants>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <BaseIntermediateOutputPath>obj\ARM\Release\</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE;ENABLE_PROFILER;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2018_4_16;UNITY_2018_4;UNITY_2018;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_METRO;UNITY_METRO;UNITY_METRO_API;UNITY_WSA;UNITY_WINRT_10_0;PLATFORM_WINRT;UNITY_WINRT;ENABLE_WINRT_PINVOKE;ENABLE_LAZY_METHOD_CACHING;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_NETWORK;ENABLE_EVENT_QUEUE;UNITY_PLATFORM_THREAD_TO_CORE_MAPPING;ENABLE_SUBSTANCE;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;CURL_STATICLIB;ENABLE_VR;ENABLE_AR;PLATFORM_OVERRIDES_APPLICATION_PACKAGE_NAME;ENABLE_DOTNET;DOTNETWINRT_PRESENT;NETFX_CORE;ENABLE_WINMD_SUPPORT;WINDOWS_UWP;UNITY_UWP;UNITY_WSA_10_0;</DefineConstants>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Master|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\ARM\Master\</OutputPath>
+    <BaseIntermediateOutputPath>obj\ARM\Master\</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2018_4_16;UNITY_2018_4;UNITY_2018;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_METRO;UNITY_METRO;UNITY_METRO_API;UNITY_WSA;UNITY_WINRT_10_0;PLATFORM_WINRT;UNITY_WINRT;ENABLE_WINRT_PINVOKE;ENABLE_LAZY_METHOD_CACHING;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_NETWORK;ENABLE_EVENT_QUEUE;UNITY_PLATFORM_THREAD_TO_CORE_MAPPING;ENABLE_SUBSTANCE;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;CURL_STATICLIB;ENABLE_VR;ENABLE_AR;PLATFORM_OVERRIDES_APPLICATION_PACKAGE_NAME;ENABLE_DOTNET;DOTNETWINRT_PRESENT;NETFX_CORE;ENABLE_WINMD_SUPPORT;WINDOWS_UWP;UNITY_UWP;UNITY_WSA_10_0;</DefineConstants>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\Programs\Unity\Holo_Projects\App\GeneratedProjects\UWP\Microsoft.MixedReality.Toolkit.Async\Microsoft.MixedReality.Toolkit.Async.csproj">
+      <Project>{5edd074b-de65-40fc-af7a-64e91b076556}</Project>
+      <Name>Microsoft.MixedReality.Toolkit.Async</Name>
+    </ProjectReference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.TerrainModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.SubstanceModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.StyleSheetsModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.StyleSheetsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.StreamingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.SpriteShapeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.SpriteMaskModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.Physics2DModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.PerformanceReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.LocalizationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.TextCoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.TilemapModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.WindModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.VRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.VideoModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.VFXModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.VehiclesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.UnityConnectModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.UNETModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.UIElementsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.InputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.GridModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.XRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.GameCenterModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.DirectorModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.CrashReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.ClothModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.AssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.ARModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.AnimationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.AIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.AccessibilityModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WinRTLegacy">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\WinRTLegacy.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Timeline">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.Timeline.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.SpatialTracking.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Windows.MixedReality.DotNetWinRT">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\Microsoft.Windows.MixedReality.DotNetWinRT.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.Networking.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing.Primitives">
+      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\System.Drawing.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <SDKReference Include="WindowsDesktop, Version=10.0.18362.0"/>
+    <SDKReference Include="WindowsMobile, Version=10.0.18362.0"/>
+    <SDKReference Include="WindowsTeam, Version=10.0.18362.0"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\AssemblyInfo.cs">
+      <Link>MixedRealityToolkit\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\DocLinkAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\DocLinkAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\EnumFlagsAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\EnumFlagsAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\ExperimentalAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\ExperimentalAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\ExtendsAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\ExtendsAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\HelpAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\HelpAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\ImplementsAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\ImplementsAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\MixedRealityControllerAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\MixedRealityControllerAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\MixedRealityDataProviderAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\MixedRealityDataProviderAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\MixedRealityExtensionServiceAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\MixedRealityExtensionServiceAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\MixedRealityServiceInspectorAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\MixedRealityServiceInspectorAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\MixedRealityServiceProfileAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\MixedRealityServiceProfileAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\PhysicsLayerAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\PhysicsLayerAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\PrefabAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\PrefabAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\ReadOnlyAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\ReadOnlyAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\ScenePickAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\ScenePickAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\SystemTypeAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\SystemTypeAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\TagPropertyAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\TagPropertyAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Attributes\Vector3RangeAttribute.cs">
+      <Link>MixedRealityToolkit\Attributes\Vector3RangeAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\BaseMixedRealityProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\BaseMixedRealityProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\BoundarySystem\BoundaryType.cs">
+      <Link>MixedRealityToolkit\Definitions\BoundarySystem\BoundaryType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\BoundarySystem\Edge.cs">
+      <Link>MixedRealityToolkit\Definitions\BoundarySystem\Edge.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\BoundarySystem\InscribedRectangle.cs">
+      <Link>MixedRealityToolkit\Definitions\BoundarySystem\InscribedRectangle.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\BoundarySystem\MixedRealityBoundaryVisualizationProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\BoundarySystem\MixedRealityBoundaryVisualizationProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\CameraSystem\BaseCameraSettingsProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\CameraSystem\BaseCameraSettingsProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\CameraSystem\CameraDisplayType.cs">
+      <Link>MixedRealityToolkit\Definitions\CameraSystem\CameraDisplayType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\CameraSystem\MixedRealityCameraProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\CameraSystem\MixedRealityCameraProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\CameraSystem\MixedRealityCameraSettingsConfiguration.cs">
+      <Link>MixedRealityToolkit\Definitions\CameraSystem\MixedRealityCameraSettingsConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Devices\ControllerMappingLibrary.cs">
+      <Link>MixedRealityToolkit\Definitions\Devices\ControllerMappingLibrary.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Devices\DeviceInputType.cs">
+      <Link>MixedRealityToolkit\Definitions\Devices\DeviceInputType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Devices\GestureInputType.cs">
+      <Link>MixedRealityToolkit\Definitions\Devices\GestureInputType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Devices\Headset.cs">
+      <Link>MixedRealityToolkit\Definitions\Devices\Headset.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Devices\InputSourceType.cs">
+      <Link>MixedRealityToolkit\Definitions\Devices\InputSourceType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Devices\MixedRealityControllerConfigurationFlags.cs">
+      <Link>MixedRealityToolkit\Definitions\Devices\MixedRealityControllerConfigurationFlags.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Devices\MixedRealityControllerMapping.cs">
+      <Link>MixedRealityToolkit\Definitions\Devices\MixedRealityControllerMapping.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Devices\MixedRealityControllerMappingProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\Devices\MixedRealityControllerMappingProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Devices\MixedRealityControllerVisualizationProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\Devices\MixedRealityControllerVisualizationProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Devices\MixedRealityControllerVisualizationSetting.cs">
+      <Link>MixedRealityToolkit\Definitions\Devices\MixedRealityControllerVisualizationSetting.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Devices\MixedRealityEyeTrackingProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\Devices\MixedRealityEyeTrackingProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Devices\MixedRealityHandTrackingProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\Devices\MixedRealityHandTrackingProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Devices\MixedRealityInteractionMapping.cs">
+      <Link>MixedRealityToolkit\Definitions\Devices\MixedRealityInteractionMapping.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Devices\SDKType.cs">
+      <Link>MixedRealityToolkit\Definitions\Devices\SDKType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Devices\SupportedControllerType.cs">
+      <Link>MixedRealityToolkit\Definitions\Devices\SupportedControllerType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Devices\TrackingState.cs">
+      <Link>MixedRealityToolkit\Definitions\Devices\TrackingState.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Diagnostics\MixedRealityDiagnosticsProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\Diagnostics\MixedRealityDiagnosticsProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\AnimatedCursorData.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\AnimatedCursorData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\CursorContextEnum.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\CursorContextEnum.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\CursorStateEnum.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\CursorStateEnum.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\InputActionEventPair.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\InputActionEventPair.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\InputActionRuleDigital.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\InputActionRuleDigital.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\InputActionRuleDualAxis.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\InputActionRuleDualAxis.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\InputActionRulePoseAxis.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\InputActionRulePoseAxis.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\InputActionRuleQuaternionAxis.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\InputActionRuleQuaternionAxis.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\InputActionRuleSingleAxis.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\InputActionRuleSingleAxis.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\InputActionRuleVectorAxis.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\InputActionRuleVectorAxis.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\KeywordAndResponse.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\KeywordAndResponse.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\MixedRealityGestureMapping.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\MixedRealityGestureMapping.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\MixedRealityGesturesProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\MixedRealityGesturesProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\MixedRealityInputAction.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\MixedRealityInputAction.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\MixedRealityInputActionRulesProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\MixedRealityInputActionRulesProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\MixedRealityInputActionsProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\MixedRealityInputActionsProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\MixedRealityInputSystemProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\MixedRealityInputSystemProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\MixedRealityPointerProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\MixedRealityPointerProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\MixedRealityRaycastHit.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\MixedRealityRaycastHit.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\MixedRealitySpeechCommandsProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\MixedRealitySpeechCommandsProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\PointerBehavior.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\PointerBehavior.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\PointerOption.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\PointerOption.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\SpeechCommands.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\SpeechCommands.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\TouchableEventType.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\TouchableEventType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\InputSystem\WindowsGestureSettings.cs">
+      <Link>MixedRealityToolkit\Definitions\InputSystem\WindowsGestureSettings.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Lines\DistortionMode.cs">
+      <Link>MixedRealityToolkit\Definitions\Lines\DistortionMode.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Lines\InterpolationMode.cs">
+      <Link>MixedRealityToolkit\Definitions\Lines\InterpolationMode.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Lines\InterpolationType.cs">
+      <Link>MixedRealityToolkit\Definitions\Lines\InterpolationType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Lines\LinePointTransformMode.cs">
+      <Link>MixedRealityToolkit\Definitions\Lines\LinePointTransformMode.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Lines\LineRotationMode.cs">
+      <Link>MixedRealityToolkit\Definitions\Lines\LineRotationMode.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Lines\PointDistributionMode.cs">
+      <Link>MixedRealityToolkit\Definitions\Lines\PointDistributionMode.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Lines\StepMode.cs">
+      <Link>MixedRealityToolkit\Definitions\Lines\StepMode.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\MixedRealityInputDataProviderConfiguration.cs">
+      <Link>MixedRealityToolkit\Definitions\MixedRealityInputDataProviderConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\MixedRealityRegisteredServiceProvidersProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\MixedRealityRegisteredServiceProvidersProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\MixedRealityServiceConfiguration.cs">
+      <Link>MixedRealityToolkit\Definitions\MixedRealityServiceConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\MixedRealitySpatialObserverConfiguration.cs">
+      <Link>MixedRealityToolkit\Definitions\MixedRealitySpatialObserverConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\MixedRealityToolkitConfigurationProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\MixedRealityToolkitConfigurationProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Physics\ComparableRaycastResult.cs">
+      <Link>MixedRealityToolkit\Definitions\Physics\ComparableRaycastResult.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Physics\FocusDetails.cs">
+      <Link>MixedRealityToolkit\Definitions\Physics\FocusDetails.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Physics\RayStep.cs">
+      <Link>MixedRealityToolkit\Definitions\Physics\RayStep.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Physics\SceneQueryType.cs">
+      <Link>MixedRealityToolkit\Definitions\Physics\SceneQueryType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Physics\TeleportSurfaceResult.cs">
+      <Link>MixedRealityToolkit\Definitions\Physics\TeleportSurfaceResult.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\SceneSystem\LightingSceneTransitionType.cs">
+      <Link>MixedRealityToolkit\Definitions\SceneSystem\LightingSceneTransitionType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\SceneSystem\MixedRealitySceneSystemProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\SceneSystem\MixedRealitySceneSystemProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\SceneSystem\RuntimeLightingSettings.cs">
+      <Link>MixedRealityToolkit\Definitions\SceneSystem\RuntimeLightingSettings.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\SceneSystem\RuntimeRenderSettings.cs">
+      <Link>MixedRealityToolkit\Definitions\SceneSystem\RuntimeRenderSettings.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\SceneSystem\RuntimeSunlightSettings.cs">
+      <Link>MixedRealityToolkit\Definitions\SceneSystem\RuntimeSunlightSettings.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\SceneSystem\SceneActivationToken.cs">
+      <Link>MixedRealityToolkit\Definitions\SceneSystem\SceneActivationToken.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\SceneSystem\SceneInfo.cs">
+      <Link>MixedRealityToolkit\Definitions\SceneSystem\SceneInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\SpatialAwareness\BaseSpatialAwarenessObject.cs">
+      <Link>MixedRealityToolkit\Definitions\SpatialAwareness\BaseSpatialAwarenessObject.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\SpatialAwareness\BaseSpatialAwarenessObserverProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\SpatialAwareness\BaseSpatialAwarenessObserverProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\SpatialAwareness\MixedRealitySpatialAwarenessMeshObserverProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\SpatialAwareness\MixedRealitySpatialAwarenessMeshObserverProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\SpatialAwareness\MixedRealitySpatialAwarenessSystemProfile.cs">
+      <Link>MixedRealityToolkit\Definitions\SpatialAwareness\MixedRealitySpatialAwarenessSystemProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\SpatialAwareness\SpatialAwarenessMeshLevelOfDetail.cs">
+      <Link>MixedRealityToolkit\Definitions\SpatialAwareness\SpatialAwarenessMeshLevelOfDetail.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\SpatialAwareness\SpatialAwarenessMeshObject.cs">
+      <Link>MixedRealityToolkit\Definitions\SpatialAwareness\SpatialAwarenessMeshObject.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\SpatialAwareness\SpatialAwarenessPlanarObject.cs">
+      <Link>MixedRealityToolkit\Definitions\SpatialAwareness\SpatialAwarenessPlanarObject.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\SpatialAwareness\SpatialAwarenessSurfaceTypes.cs">
+      <Link>MixedRealityToolkit\Definitions\SpatialAwareness\SpatialAwarenessSurfaceTypes.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\SpatialAwareness\SpatialMeshDisplayOptions.cs">
+      <Link>MixedRealityToolkit\Definitions\SpatialAwareness\SpatialMeshDisplayOptions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\AnimatorParameter.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\AnimatorParameter.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\ArticulatedHandPose.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\ArticulatedHandPose.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\AutoStartBehavior.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\AutoStartBehavior.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\AxisType.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\AxisType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\CollationOrder.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\CollationOrder.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\ExperienceScale.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\ExperienceScale.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\Handedness.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\Handedness.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\MixedRealityCapability.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\MixedRealityCapability.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\MixedRealityPose.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\MixedRealityPose.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\MovementConstraintType.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\MovementConstraintType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\OrientationType.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\OrientationType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\PivotAxis.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\PivotAxis.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\ProcessResult.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\ProcessResult.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\ProfileMenuItemIndices.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\ProfileMenuItemIndices.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\RadialViewReferenceDirection.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\RadialViewReferenceDirection.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\RecognitionConfidenceLevel.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\RecognitionConfidenceLevel.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\RotationConstraintType.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\RotationConstraintType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\ScaleState.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\ScaleState.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\SceneAssetReferenceAttribute.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\SceneAssetReferenceAttribute.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\SolverOrientationType.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\SolverOrientationType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\SupportedApplicationModes.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\SupportedApplicationModes.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\SupportedPlatforms.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\SupportedPlatforms.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\SystemType.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\SystemType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\TrackedHandJoint.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\TrackedHandJoint.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\TrackedObjectType.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\TrackedObjectType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\TypeGrouping.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\TypeGrouping.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\Vector3Smoothed.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\Vector3Smoothed.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Definitions\Utilities\VolumeType.cs">
+      <Link>MixedRealityToolkit\Definitions\Utilities\VolumeType.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\EventDatum\Boundary\BoundaryEventData.cs">
+      <Link>MixedRealityToolkit\EventDatum\Boundary\BoundaryEventData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\EventDatum\Diagnostics\DiagnosticsEventData.cs">
+      <Link>MixedRealityToolkit\EventDatum\Diagnostics\DiagnosticsEventData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\EventDatum\GenericBaseEventData.cs">
+      <Link>MixedRealityToolkit\EventDatum\GenericBaseEventData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\EventDatum\Input\BaseInputEventData.cs">
+      <Link>MixedRealityToolkit\EventDatum\Input\BaseInputEventData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\EventDatum\Input\DictationEventData.cs">
+      <Link>MixedRealityToolkit\EventDatum\Input\DictationEventData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\EventDatum\Input\FocusEventData.cs">
+      <Link>MixedRealityToolkit\EventDatum\Input\FocusEventData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\EventDatum\Input\HandTrackingInputEventData.cs">
+      <Link>MixedRealityToolkit\EventDatum\Input\HandTrackingInputEventData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\EventDatum\Input\InputEventData.cs">
+      <Link>MixedRealityToolkit\EventDatum\Input\InputEventData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\EventDatum\Input\MixedRealityPointerEventData.cs">
+      <Link>MixedRealityToolkit\EventDatum\Input\MixedRealityPointerEventData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\EventDatum\Input\SourcePoseEventData.cs">
+      <Link>MixedRealityToolkit\EventDatum\Input\SourcePoseEventData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\EventDatum\Input\SourceStateEventData.cs">
+      <Link>MixedRealityToolkit\EventDatum\Input\SourceStateEventData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\EventDatum\Input\SpeechEventData.cs">
+      <Link>MixedRealityToolkit\EventDatum\Input\SpeechEventData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\EventDatum\PlacementEventData.cs">
+      <Link>MixedRealityToolkit\EventDatum\PlacementEventData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\EventDatum\SpatialAwareness\MixedRealitySpatialAwarenessEventData.cs">
+      <Link>MixedRealityToolkit\EventDatum\SpatialAwareness\MixedRealitySpatialAwarenessEventData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\EventDatum\Teleport\TeleportEventData.cs">
+      <Link>MixedRealityToolkit\EventDatum\Teleport\TeleportEventData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\AnimationCurveExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\AnimationCurveExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\ArrayExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\ArrayExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\AssemblyExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\AssemblyExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\BoundsExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\BoundsExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\CameraExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\CameraExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\CanvasExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\CanvasExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\CollectionsExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\CollectionsExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\Color32Extensions.cs">
+      <Link>MixedRealityToolkit\Extensions\Color32Extensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\ComparerExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\ComparerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\ComponentExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\ComponentExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\DoubleExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\DoubleExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\EnumerableExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\EnumerableExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\EventSystemExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\EventSystemExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\FloatExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\FloatExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\GameObjectExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\GameObjectExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\HandednessExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\HandednessExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\LayerExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\LayerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\MathfExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\MathfExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\ProcessExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\ProcessExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\QuaternionExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\QuaternionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\RayExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\RayExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\ReflectionExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\ReflectionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\StringBuilderExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\StringBuilderExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\StringExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\StringExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\Texture2DExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\Texture2DExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\TransformExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\TransformExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\TypeExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\TypeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\UnityObjectExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\UnityObjectExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Extensions\VectorExtensions.cs">
+      <Link>MixedRealityToolkit\Extensions\VectorExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Audio\IAudioInfluencer.cs">
+      <Link>MixedRealityToolkit\Interfaces\Audio\IAudioInfluencer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\BoundarySystem\IMixedRealityBoundaryHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\BoundarySystem\IMixedRealityBoundaryHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\BoundarySystem\IMixedRealityBoundarySystem.cs">
+      <Link>MixedRealityToolkit\Interfaces\BoundarySystem\IMixedRealityBoundarySystem.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\CameraSystem\IMixedRealityCameraSettingsProvider.cs">
+      <Link>MixedRealityToolkit\Interfaces\CameraSystem\IMixedRealityCameraSettingsProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\CameraSystem\IMixedRealityCameraSystem.cs">
+      <Link>MixedRealityToolkit\Interfaces\CameraSystem\IMixedRealityCameraSystem.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Devices\IMixedRealityController.cs">
+      <Link>MixedRealityToolkit\Interfaces\Devices\IMixedRealityController.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Devices\IMixedRealityControllerPoseSynchronizer.cs">
+      <Link>MixedRealityToolkit\Interfaces\Devices\IMixedRealityControllerPoseSynchronizer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Devices\IMixedRealityControllerVisualizer.cs">
+      <Link>MixedRealityToolkit\Interfaces\Devices\IMixedRealityControllerVisualizer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Devices\IMixedRealityDictationSystem.cs">
+      <Link>MixedRealityToolkit\Interfaces\Devices\IMixedRealityDictationSystem.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Devices\IMixedRealityHand.cs">
+      <Link>MixedRealityToolkit\Interfaces\Devices\IMixedRealityHand.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Devices\IMixedRealityHandJointService.cs">
+      <Link>MixedRealityToolkit\Interfaces\Devices\IMixedRealityHandJointService.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Devices\IMixedRealityHandVisualizer.cs">
+      <Link>MixedRealityToolkit\Interfaces\Devices\IMixedRealityHandVisualizer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Devices\IMixedRealityInputDeviceManager.cs">
+      <Link>MixedRealityToolkit\Interfaces\Devices\IMixedRealityInputDeviceManager.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Devices\IMixedRealitySpeechSystem.cs">
+      <Link>MixedRealityToolkit\Interfaces\Devices\IMixedRealitySpeechSystem.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Diagnostics\IMixedRealityDiagnosticsHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\Diagnostics\IMixedRealityDiagnosticsHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Diagnostics\IMixedRealityDiagnosticsSystem.cs">
+      <Link>MixedRealityToolkit\Interfaces\Diagnostics\IMixedRealityDiagnosticsSystem.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\EventSystem\Handlers\IMixedRealityEventHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\EventSystem\Handlers\IMixedRealityEventHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\EventSystem\IMixedRealityEventSource.cs">
+      <Link>MixedRealityToolkit\Interfaces\EventSystem\IMixedRealityEventSource.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\EventSystem\IMixedRealityEventSystem.cs">
+      <Link>MixedRealityToolkit\Interfaces\EventSystem\IMixedRealityEventSystem.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\IMixedRealityServiceConfiguration.cs">
+      <Link>MixedRealityToolkit\Interfaces\IMixedRealityServiceConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityBaseInputHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityBaseInputHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityDictationHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityDictationHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityFocusChangedHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityFocusChangedHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityFocusHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityFocusHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityGestureHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityGestureHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityHandJointHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityHandJointHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityHandMeshHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityHandMeshHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityInputActionHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityInputActionHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityInputHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityInputHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityPointerHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityPointerHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealitySourcePoseHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealitySourcePoseHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealitySourceStateHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealitySourceStateHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealitySpeechHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealitySpeechHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityTouchHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\Handlers\IMixedRealityTouchHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\ICursorModifier.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\ICursorModifier.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IInputActionRule.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IInputActionRule.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityCursor.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityCursor.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityEyeGazeDataProvider.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityEyeGazeDataProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityEyeGazeProvider.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityEyeGazeProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityEyeSaccadeProvider.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityEyeSaccadeProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityFocusProvider.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityFocusProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityGazeProvider.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityGazeProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityInputSource.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityInputSource.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityInputSystem.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityInputSystem.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityMouseDeviceManager.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityMouseDeviceManager.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityMousePointer.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityMousePointer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityNearPointer.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityNearPointer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityPointer.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityPointer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityPointerMediator.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityPointerMediator.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityPrimaryPointerSelector.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityPrimaryPointerSelector.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityRaycastProvider.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityRaycastProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityTeleportPointer.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityTeleportPointer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityTouchPointer.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IMixedRealityTouchPointer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IPointerPreferences.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IPointerPreferences.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\InputSystem\IPointerResult.cs">
+      <Link>MixedRealityToolkit\Interfaces\InputSystem\IPointerResult.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Physics\IBaseRayStabilizer.cs">
+      <Link>MixedRealityToolkit\Interfaces\Physics\IBaseRayStabilizer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Registrars\IMixedRealityServiceRegistrar.cs">
+      <Link>MixedRealityToolkit\Interfaces\Registrars\IMixedRealityServiceRegistrar.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Rendering\IMaterialInstanceOwner.cs">
+      <Link>MixedRealityToolkit\Interfaces\Rendering\IMaterialInstanceOwner.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\SceneSystem\IMixedRealitySceneSystem.cs">
+      <Link>MixedRealityToolkit\Interfaces\SceneSystem\IMixedRealitySceneSystem.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\SceneSystem\IMixedRealitySceneSystemEditor.cs">
+      <Link>MixedRealityToolkit\Interfaces\SceneSystem\IMixedRealitySceneSystemEditor.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Services\IMixedRealityCapabilityCheck.cs">
+      <Link>MixedRealityToolkit\Interfaces\Services\IMixedRealityCapabilityCheck.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Services\IMixedRealityDataProvider.cs">
+      <Link>MixedRealityToolkit\Interfaces\Services\IMixedRealityDataProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Services\IMixedRealityDataProviderAccess.cs">
+      <Link>MixedRealityToolkit\Interfaces\Services\IMixedRealityDataProviderAccess.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Services\IMixedRealityExtensionService.cs">
+      <Link>MixedRealityToolkit\Interfaces\Services\IMixedRealityExtensionService.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\Services\IMixedRealityService.cs">
+      <Link>MixedRealityToolkit\Interfaces\Services\IMixedRealityService.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\SpatialAwareness\Handlers\IMixedRealitySpatialAwarenessObservationHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\SpatialAwareness\Handlers\IMixedRealitySpatialAwarenessObservationHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\SpatialAwareness\IMixedRealitySpatialAwarenessObject.cs">
+      <Link>MixedRealityToolkit\Interfaces\SpatialAwareness\IMixedRealitySpatialAwarenessObject.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\SpatialAwareness\IMixedRealitySpatialAwarenessSystem.cs">
+      <Link>MixedRealityToolkit\Interfaces\SpatialAwareness\IMixedRealitySpatialAwarenessSystem.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\SpatialAwareness\Observers\IMixedRealitySpatialAwarenessMeshObserver.cs">
+      <Link>MixedRealityToolkit\Interfaces\SpatialAwareness\Observers\IMixedRealitySpatialAwarenessMeshObserver.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\SpatialAwareness\Observers\IMixedRealitySpatialAwarenessObserver.cs">
+      <Link>MixedRealityToolkit\Interfaces\SpatialAwareness\Observers\IMixedRealitySpatialAwarenessObserver.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\TeleportSystem\Handlers\IMixedRealityTeleportHandler.cs">
+      <Link>MixedRealityToolkit\Interfaces\TeleportSystem\Handlers\IMixedRealityTeleportHandler.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\TeleportSystem\IMixedRealityTeleportHotSpot.cs">
+      <Link>MixedRealityToolkit\Interfaces\TeleportSystem\IMixedRealityTeleportHotSpot.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Interfaces\TeleportSystem\IMixedRealityTeleportSystem.cs">
+      <Link>MixedRealityToolkit\Interfaces\TeleportSystem\IMixedRealityTeleportSystem.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\BaseCameraSettingsProvider.cs">
+      <Link>MixedRealityToolkit\Providers\BaseCameraSettingsProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\BaseController.cs">
+      <Link>MixedRealityToolkit\Providers\BaseController.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\BaseGenericInputSource.cs">
+      <Link>MixedRealityToolkit\Providers\BaseGenericInputSource.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\BaseInputDeviceManager.cs">
+      <Link>MixedRealityToolkit\Providers\BaseInputDeviceManager.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\BaseSpatialObserver.cs">
+      <Link>MixedRealityToolkit\Providers\BaseSpatialObserver.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\GenericPointer.cs">
+      <Link>MixedRealityToolkit\Providers\GenericPointer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\Hands\BaseHand.cs">
+      <Link>MixedRealityToolkit\Providers\Hands\BaseHand.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\Hands\BaseHandVisualizer.cs">
+      <Link>MixedRealityToolkit\Providers\Hands\BaseHandVisualizer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\Hands\HandBounds.cs">
+      <Link>MixedRealityToolkit\Providers\Hands\HandBounds.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\Hands\HandJointService.cs">
+      <Link>MixedRealityToolkit\Providers\Hands\HandJointService.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\Hands\HandJointUtils.cs">
+      <Link>MixedRealityToolkit\Providers\Hands\HandJointUtils.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\Hands\HandRay.cs">
+      <Link>MixedRealityToolkit\Providers\Hands\HandRay.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\UnityInput\GenericJoystickController.cs">
+      <Link>MixedRealityToolkit\Providers\UnityInput\GenericJoystickController.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\UnityInput\MixedRealityMouseInputProfile.cs">
+      <Link>MixedRealityToolkit\Providers\UnityInput\MixedRealityMouseInputProfile.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\UnityInput\MouseController.cs">
+      <Link>MixedRealityToolkit\Providers\UnityInput\MouseController.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\UnityInput\MouseDeviceManager.cs">
+      <Link>MixedRealityToolkit\Providers\UnityInput\MouseDeviceManager.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\UnityInput\UnityJoystickManager.cs">
+      <Link>MixedRealityToolkit\Providers\UnityInput\UnityJoystickManager.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\UnityInput\UnityTouchController.cs">
+      <Link>MixedRealityToolkit\Providers\UnityInput\UnityTouchController.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\UnityInput\UnityTouchDeviceManager.cs">
+      <Link>MixedRealityToolkit\Providers\UnityInput\UnityTouchDeviceManager.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Providers\UnityInput\XboxController.cs">
+      <Link>MixedRealityToolkit\Providers\UnityInput\XboxController.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Services\BaseCoreSystem.cs">
+      <Link>MixedRealityToolkit\Services\BaseCoreSystem.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Services\BaseDataProvider.cs">
+      <Link>MixedRealityToolkit\Services\BaseDataProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Services\BaseDataProviderAccessCoreSystem.cs">
+      <Link>MixedRealityToolkit\Services\BaseDataProviderAccessCoreSystem.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Services\BaseEventSystem.cs">
+      <Link>MixedRealityToolkit\Services\BaseEventSystem.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Services\BaseExtensionService.cs">
+      <Link>MixedRealityToolkit\Services\BaseExtensionService.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Services\BaseService.cs">
+      <Link>MixedRealityToolkit\Services\BaseService.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Services\MixedRealityToolkit.cs">
+      <Link>MixedRealityToolkit\Services\MixedRealityToolkit.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\CameraCache.cs">
+      <Link>MixedRealityToolkit\Utilities\CameraCache.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\CameraEventRouter.cs">
+      <Link>MixedRealityToolkit\Utilities\CameraEventRouter.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\CoreServices.cs">
+      <Link>MixedRealityToolkit\Utilities\CoreServices.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\DebugUtilities.cs">
+      <Link>MixedRealityToolkit\Utilities\DebugUtilities.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\EdgeUtilities.cs">
+      <Link>MixedRealityToolkit\Utilities\EdgeUtilities.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Facades\ServiceFacade.cs">
+      <Link>MixedRealityToolkit\Utilities\Facades\ServiceFacade.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\FastSimplexNoise.cs">
+      <Link>MixedRealityToolkit\Utilities\FastSimplexNoise.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\GameObjectManagement\GameObjectCreator.cs">
+      <Link>MixedRealityToolkit\Utilities\GameObjectManagement\GameObjectCreator.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\GameObjectManagement\GameObjectPool.cs">
+      <Link>MixedRealityToolkit\Utilities\GameObjectManagement\GameObjectPool.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\GameObjectManagement\GenericPrefabInstanceCreator.cs">
+      <Link>MixedRealityToolkit\Utilities\GameObjectManagement\GenericPrefabInstanceCreator.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\GameObjectManagement\IGameObjectCreatorListener.cs">
+      <Link>MixedRealityToolkit\Utilities\GameObjectManagement\IGameObjectCreatorListener.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\InspectorFields\InspectorField.cs">
+      <Link>MixedRealityToolkit\Utilities\InspectorFields\InspectorField.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\InspectorFields\InspectorFieldData.cs">
+      <Link>MixedRealityToolkit\Utilities\InspectorFields\InspectorFieldData.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\InspectorFields\InspectorGenericFields.cs">
+      <Link>MixedRealityToolkit\Utilities\InspectorFields\InspectorGenericFields.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\InspectorFields\InspectorPropertySettings.cs">
+      <Link>MixedRealityToolkit\Utilities\InspectorFields\InspectorPropertySettings.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\DataProviders\BaseMixedRealityLineDataProvider.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\DataProviders\BaseMixedRealityLineDataProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\DataProviders\BezierDataProvider.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\DataProviders\BezierDataProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\DataProviders\BezierInertia.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\DataProviders\BezierInertia.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\DataProviders\EllipseLineDataProvider.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\DataProviders\EllipseLineDataProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\DataProviders\ParabolaConstrainedLineDataProvider.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\DataProviders\ParabolaConstrainedLineDataProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\DataProviders\ParabolaLineDataProvider.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\DataProviders\ParabolaLineDataProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\DataProviders\ParabolaPhysicalLineDataProvider.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\DataProviders\ParabolaPhysicalLineDataProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\DataProviders\RectangleLineDataProvider.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\DataProviders\RectangleLineDataProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\DataProviders\SimpleLineDataProvider.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\DataProviders\SimpleLineDataProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\DataProviders\SplineDataProvider.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\DataProviders\SplineDataProvider.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\LineFollower.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\LineFollower.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\LineUtility.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\LineUtility.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\Renderers\BaseMixedRealityLineRenderer.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\Renderers\BaseMixedRealityLineRenderer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\Renderers\MeshLineRenderer.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\Renderers\MeshLineRenderer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\Renderers\MixedRealityLineRenderer.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\Renderers\MixedRealityLineRenderer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\Renderers\ParticleSystemLineRenderer.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\Renderers\ParticleSystemLineRenderer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Lines\Renderers\StripMeshLineRenderer.cs">
+      <Link>MixedRealityToolkit\Utilities\Lines\Renderers\StripMeshLineRenderer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\MaintainBorderLightWidth.cs">
+      <Link>MixedRealityToolkit\Utilities\MaintainBorderLightWidth.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\MathUtilities.cs">
+      <Link>MixedRealityToolkit\Utilities\MathUtilities.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\MixedRealityPlayspace.cs">
+      <Link>MixedRealityToolkit\Utilities\MixedRealityPlayspace.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\MixedRealityServiceRegistry.cs">
+      <Link>MixedRealityToolkit\Utilities\MixedRealityServiceRegistry.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\OBJWriterUtility.cs">
+      <Link>MixedRealityToolkit\Utilities\OBJWriterUtility.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Physics\BaseRayStabilizer.cs">
+      <Link>MixedRealityToolkit\Utilities\Physics\BaseRayStabilizer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Physics\Distorters\Distorter.cs">
+      <Link>MixedRealityToolkit\Utilities\Physics\Distorters\Distorter.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Physics\Distorters\DistorterBulge.cs">
+      <Link>MixedRealityToolkit\Utilities\Physics\Distorters\DistorterBulge.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Physics\Distorters\DistorterGravity.cs">
+      <Link>MixedRealityToolkit\Utilities\Physics\Distorters\DistorterGravity.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Physics\Distorters\DistorterSimplex.cs">
+      <Link>MixedRealityToolkit\Utilities\Physics\Distorters\DistorterSimplex.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Physics\Distorters\DistorterSphere.cs">
+      <Link>MixedRealityToolkit\Utilities\Physics\Distorters\DistorterSphere.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Physics\Distorters\DistorterWiggly.cs">
+      <Link>MixedRealityToolkit\Utilities\Physics\Distorters\DistorterWiggly.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Physics\GazeStabilizer.cs">
+      <Link>MixedRealityToolkit\Utilities\Physics\GazeStabilizer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Physics\InterpolationUtilities.cs">
+      <Link>MixedRealityToolkit\Utilities\Physics\InterpolationUtilities.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Physics\Interpolator.cs">
+      <Link>MixedRealityToolkit\Utilities\Physics\Interpolator.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Physics\MixedRealityRaycaster.cs">
+      <Link>MixedRealityToolkit\Utilities\Physics\MixedRealityRaycaster.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Physics\RaycastResultComparer.cs">
+      <Link>MixedRealityToolkit\Utilities\Physics\RaycastResultComparer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Physics\TwoHandMoveLogic.cs">
+      <Link>MixedRealityToolkit\Utilities\Physics\TwoHandMoveLogic.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Physics\TwoHandRotateLogic.cs">
+      <Link>MixedRealityToolkit\Utilities\Physics\TwoHandRotateLogic.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Physics\TwoHandScaleLogic.cs">
+      <Link>MixedRealityToolkit\Utilities\Physics\TwoHandScaleLogic.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Physics\VectorRollingStatistics.cs">
+      <Link>MixedRealityToolkit\Utilities\Physics\VectorRollingStatistics.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\PlatformUtility.cs">
+      <Link>MixedRealityToolkit\Utilities\PlatformUtility.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Rendering\DepthBufferRenderer.cs">
+      <Link>MixedRealityToolkit\Utilities\Rendering\DepthBufferRenderer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Rendering\MaterialInstance.cs">
+      <Link>MixedRealityToolkit\Utilities\Rendering\MaterialInstance.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Scenes\EditorSceneUtils.cs">
+      <Link>MixedRealityToolkit\Utilities\Scenes\EditorSceneUtils.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Scenes\RuntimeSceneUtils.cs">
+      <Link>MixedRealityToolkit\Utilities\Scenes\RuntimeSceneUtils.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\Scenes\SerializedObjectUtils.cs">
+      <Link>MixedRealityToolkit\Utilities\Scenes\SerializedObjectUtils.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\ScriptingUtilities.cs">
+      <Link>MixedRealityToolkit\Utilities\ScriptingUtilities.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\StandardShader\BaseMeshOutline.cs">
+      <Link>MixedRealityToolkit\Utilities\StandardShader\BaseMeshOutline.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\StandardShader\ClippingBox.cs">
+      <Link>MixedRealityToolkit\Utilities\StandardShader\ClippingBox.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\StandardShader\ClippingPlane.cs">
+      <Link>MixedRealityToolkit\Utilities\StandardShader\ClippingPlane.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\StandardShader\ClippingPrimitive.cs">
+      <Link>MixedRealityToolkit\Utilities\StandardShader\ClippingPrimitive.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\StandardShader\ClippingSphere.cs">
+      <Link>MixedRealityToolkit\Utilities\StandardShader\ClippingSphere.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\StandardShader\HoverLight.cs">
+      <Link>MixedRealityToolkit\Utilities\StandardShader\HoverLight.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\StandardShader\MeshOutline.cs">
+      <Link>MixedRealityToolkit\Utilities\StandardShader\MeshOutline.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\StandardShader\MeshOutlineHierarchy.cs">
+      <Link>MixedRealityToolkit\Utilities\StandardShader\MeshOutlineHierarchy.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\StandardShader\MeshSmoother.cs">
+      <Link>MixedRealityToolkit\Utilities\StandardShader\MeshSmoother.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\StandardShader\ProximityLight.cs">
+      <Link>MixedRealityToolkit\Utilities\StandardShader\ProximityLight.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\StandardShader\StandardShaderUtility.cs">
+      <Link>MixedRealityToolkit\Utilities\StandardShader\StandardShaderUtility.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\TypeCacheUtility.cs">
+      <Link>MixedRealityToolkit\Utilities\TypeCacheUtility.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\UWPCapabilityUtility.cs">
+      <Link>MixedRealityToolkit\Utilities\UWPCapabilityUtility.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WebRequestRest\Response.cs">
+      <Link>MixedRealityToolkit\Utilities\WebRequestRest\Response.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WebRequestRest\Rest.cs">
+      <Link>MixedRealityToolkit\Utilities\WebRequestRest\Rest.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsApiChecker.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsApiChecker.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\ActivePowerSchemeInfo.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\ActivePowerSchemeInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\AdapterInfo.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\AdapterInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\ApplicationInfo.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\ApplicationInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\AvailableWiFiNetworks.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\AvailableWiFiNetworks.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\BatteryInfo.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\BatteryInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\DeviceInfo.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\DeviceInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\DeviceOsInfo.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\DeviceOsInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\DevicePortalConnections.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\DevicePortalConnections.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\DHCPInfo.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\DHCPInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\FileInfo.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\FileInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\FileList.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\FileList.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\InstalledApps.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\InstalledApps.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\InstallStatus.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\InstallStatus.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\InterfaceInfo.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\InterfaceInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\IpAddressInfo.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\IpAddressInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\IpConfigInfo.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\IpConfigInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\MachineName.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\MachineName.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\NetworkInterfaces.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\NetworkInterfaces.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\NetworkProfileInfo.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\NetworkProfileInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\PowerStateInfo.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\PowerStateInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\ProcessInfo.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\ProcessInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\ProcessList.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\ProcessList.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\WirelessNetworkInfo.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DataStructures\WirelessNetworkInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\MixedRealityToolkit\Utilities\WindowsDevicePortal\DevicePortal.cs">
+      <Link>MixedRealityToolkit\Utilities\WindowsDevicePortal\DevicePortal.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+    <PropertyGroup>
+    <TargetsTriggeredByCompilation>$(TargetsTriggeredByCompilation);RunSerializationWeaver</TargetsTriggeredByCompilation>
+  </PropertyGroup>
+  <Target Name="RunSerializationWeaver" Condition="'$(BuildingProject)' == 'true'">
+    <Message Importance="high" Text="Running SerializationWeaver..." />
+    <Move SourceFiles="@(IntermediateAssembly)" DestinationFolder="$(TargetDir)Unprocessed" OverwriteReadOnlyFiles="true" />
+    <Move SourceFiles="@(IntermediateAssembly-&gt;'%(RelativeDir)%(Filename).pdb')" DestinationFolder="$(TargetDir)Unprocessed" Condition="Exists('@(IntermediateAssembly-&gt;'%(RelativeDir)%(Filename).pdb')')" OverwriteReadOnlyFiles="true" />
+    <Exec Command="&quot;$(UnityWSAToolsDir)SerializationWeaver\SerializationWeaver.exe&quot; &quot;-pdb&quot; &quot;-verbose&quot; &quot;-unity-engine=$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.CoreModule.dll&quot; &quot;$([System.IO.Path]::GetFullPath('$(IntermediateOutputPath)').TrimEnd('\'))&quot; &quot;-lock=$([System.IO.Path]::Combine('$(ProjectDir)', 'project.lock.json'))&quot; &quot;-assembly=$(TargetDir)Unprocessed\$(TargetFileName)&quot; &quot;@E:\Programs\Unity\Holo_Projects\App\GeneratedProjects\UWP\Microsoft.MixedReality.Toolkit\SerializationWeaverArgs.txt&quot; &quot;-additionalAssemblyPath=$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed&quot; &quot;-unity-networking=$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.Networking.dll&quot; &quot;-additionalAssemblyPath=$(UnityWSASolutionDir)GeneratedProjects\UWP\Microsoft.MixedReality.Toolkit.Async\bin\$(PlatformName)\$(ConfigurationName)&quot;" />
+    <Message Importance="high" Text="SerializationWeaver done." />
+  </Target>
+  <PropertyGroup>
+    <CleanDependsOn>$(CleanDependsOn);CleanSerializationWeaver</CleanDependsOn>
+  </PropertyGroup>
+  <Target Name="CleanSerializationWeaver">
+    <Delete Files="$(TargetDir)Unprocessed\$(TargetFileName)" />
+    <Delete Files="$(TargetDir)Unprocessed\$(TargetName).pdb" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
