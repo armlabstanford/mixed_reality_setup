@@ -121,7 +121,7 @@ $ sudo apt upgrade
      - Desktop development with C++
      - Universal Windows Platform development
 
-## Building your first Hololens app and communicate with ROS
+## Building your first Hololens app and communicating with ROS
 
 ### Current set-up:
 - Host OS: Windows 10 Education
@@ -131,3 +131,65 @@ $ sudo apt upgrade
 - [Windows SDK 18362](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk/)
 
 *Note*: You'll have to complete the set-up described [above](#software-installation) before continuing with this section.
+
+1. Obtaining the sample ROS files
+   - Download and extract this repository.
+   - Place the `box-ros` and `gazebo_simulation_scene` package in the `src` folder of your Catkin workspace in Ubuntu, then build by running `$ catkin_make` from the root folder of your catkin workspace. (Your catkin workspace is found in the home directory of the Ubuntu VM, and is usually called catkin_ws).
+   - In the directory `gazebo_simulation_scene/scripts` make the file `update_pose.py` executable by running
+   ```
+   chmod +x update_pose.py
+   ```
+
+2. Obtaining the sample Unity project
+   - In this repository, there is a folder named `Box`. Open this project in Unity.
+
+3. Modifying build settings in Unity
+   - In Unity, under `File`> `Build Settings` > `Platform`, select `Universal Windows Platform` and use the following setup:
+	 - Target Device: `Any device`
+	 - Architecture: `x86`
+	 - Build Type: `D3D`
+	 - Target SDK Version: `10.0.18362.x`
+	 - Minimum Platform Version: `Latest installed`
+	 - Visual Studio Version: `Latest installed`
+	 - Build and Run on: `Local Machine`
+	 - Build configuration: `Release`
+   - Click on `Switch Platform`.
+
+4. Modifying project settings in Unity
+   - In Unity, under `Edit`> `Project Settings` > `Player`, select the Windows icon. 
+   - Under `XR Settings`, ensure that the following is checked:
+     - `Virtual Reality Supported`
+   - Under `Other Settings` > `Configuration`, select the following:
+     - Scripting Runtime Version: `.NET 4.x Equivalent`
+     - Scripting Backend: `IL2CPP`
+   - Under `Publishing Settings` > `Capabilities`, ensure the following options are checked:
+     - `InternetClientServer`
+     - `PrivateNetworkClientServer`
+     - `SpatialPerception`
+     - `RemoteSystem`
+ 
+5. Opening the scene in Unity
+    - In the `Assets` folder, there should be a scene named `box`. Double click on it within Unity to open the scene.
+    - On the left, you should be able to see an object named `RosConnector`. This helps us communicate with ROS when the app is deployed on Hololens. Click on `RosConnector`
+    - On the right, you will see that this object contains `Ros Connector (Script)` and `Point Publisher (Script)`.
+    - `Point Publisher (Script)` is a script that helps to publish information from Hololens to ROS. A separate script must be written for different ROS message type. In this case, `Point Publisher (Script)` publishes a [Point Message](https://docs.ros.org/api/geometry_msgs/html/msg/Point.html). The topic that is published can be changed under `Topic`. In this case, the message is published to `/point` topic.
+ 
+6. Modifying the IP address
+    - `Ros Connector (Script)` is used to change the IP address of our Ubuntu OS that is deployed in Hyper-V. Find the IP address of your Ubuntu OS by using the `$ ifconfig` command in an Ubuntu terminal. If your Network Adapter was set-up correctly in Step 4 during the [installation phase](#software-installation), you should see the IP address listed under `eth0`. For example, it could be `inet 192.168.137.66`.
+    - Copy and paste this IP address in `Ros Connector (Script)` > `Ros Bridge Server Url` and append `port 9090`. For example, it could be `ws://192.168.137.66:9090`.
+    
+7. Building the Hololens App from Unity
+    - We are finally ready to build the app.
+    - Under `File` > `Build Settings`, ensure `Universal Windows Platform` is selected as the build platform and click on `Build`. When the prompt for the file location appears, select the `App` folder and click Select Folder.
+
+8. Running ROS in Ubuntu
+   - Open terminal in Ubuntu and run the following command:
+   ```
+   $ roslaunch box-ros box.launch
+   ```
+
+9. Running the Hololens App
+    - Under the `App` folder of your project, you should now see a `Box.sln`. Double click on it to open it in Visual Studio.
+    - In Visual Studio top menu bar, change to `Release`, `x86` and `HoloLens Emulator 10.0.x`. Then click on the green Play button located on the left of `HoloLens Emulator 10.0.x`.
+    - Once the emulator is running, you should see `Clien connected` in your Ubuntu terminal.
+    - Use the arrow keys (to move user's gaze) and WASD (to walk around) in the emulator and find the red box. Using your spacebar, you can pick the box and place it elsewhere by using the spacebar to drop it off. The location of the box in Gazebo should also update as you move the box around.
