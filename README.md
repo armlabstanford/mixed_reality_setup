@@ -141,7 +141,7 @@ $ sudo apt upgrade
    ```
 
 2. Obtaining the sample Unity project
-   - In this repository, there is a folder named `Box`. Open this project in Unity.
+   - Download the sample `Box` project [here](https://stanford.box.com/s/0560555c6t0ryglhkl8lyaaqbo12q54v). Open this project in Unity.
 
 3. Modifying build settings in Unity
    - In Unity, under `File`> `Build Settings` > `Platform`, select `Universal Windows Platform` and use the following setup:
