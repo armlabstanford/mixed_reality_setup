@@ -174,9 +174,10 @@ $ sudo apt upgrade
     - On the right, you will see that this object contains `Ros Connector (Script)` and `Point Publisher (Script)`.
     - `Point Publisher (Script)` is a script that helps to publish information from Hololens to ROS. A separate script must be written for different ROS message type. In this case, `Point Publisher (Script)` publishes a [Point Message](https://docs.ros.org/api/geometry_msgs/html/msg/Point.html). The topic that is published can be changed under `Topic`. In this case, the message is published to `/point` topic.
  
-6. Modifying the IP address
+6. Modifying ROS Connector
     - `Ros Connector (Script)` is used to change the IP address of our Ubuntu OS that is deployed in Hyper-V. Find the IP address of your Ubuntu OS by using the `$ ifconfig` command in an Ubuntu terminal. If your Network Adapter was set-up correctly in Step 4 during the [installation phase](#software-installation), you should see the IP address listed under `eth0`. For example, it could be `inet 192.168.137.66`.
     - Copy and paste this IP address in `Ros Connector (Script)` > `Ros Bridge Server Url` and append `port 9090`. For example, it could be `ws://192.168.137.66:9090`.
+    - Under `Protocol`, ensure that `Web Socket UWP` is selected.
     
 7. Building the Hololens App from Unity
     - We are finally ready to build the app.
@@ -191,5 +192,22 @@ $ sudo apt upgrade
 9. Running the Hololens App
     - Under the `App` folder of your project, you should now see a `Box.sln`. Double click on it to open it in Visual Studio.
     - In Visual Studio top menu bar, change to `Release`, `x86` and `HoloLens Emulator 10.0.x`. Then click on the green Play button located on the left of `HoloLens Emulator 10.0.x`.
-    - Once the emulator is running, you should see `Clien connected` in your Ubuntu terminal.
+    - Once the emulator is running, you should see `Client connected.  1 clients total.` in your Ubuntu terminal.
     - Use the arrow keys (to move user's gaze) and WASD (to walk around) in the emulator and find the red box. Using your spacebar, you can pick the box and place it elsewhere by using the spacebar to drop it off. The location of the box in Gazebo should also update as you move the box around.
+
+## Troubleshooting tips
+**Q: I managed to build the HoloLens app and run it in the emulator but it is not connecting with ROS.**
+
+**A**: Ensure that `Web Socket UWP` is selected in Unity (under your current scene > `ROSConnector` > `Protocol`). The original [ROS#](https://github.com/siemens/ros-sharp) is written for NET application whereas HoloLens is a UWP platform. Luckily, there is a UWP version of ROS# [here](https://github.com/dwhit/ros-sharp) which has been imported into the sample Unity `Box` project found in this repository. If you are interested, read this [thread](https://github.com/siemens/ros-sharp/issues/33) for more information.
+
+**Q: My HoloLens client is connected to ROS but no message is being transmitted.**
+
+**A**: This is a known issue faced by other users as well as seen in [here](https://github.com/siemens/ros-sharp/issues/201) and [here](https://github.com/siemens/ros-sharp/issues/33). The suspected reason is because of `Newtonsoft.Json` and `Newtonsoft.Json.dll` found under `\Box\Assets\RosSharp\Plugins`. 
+
+A quick fix is proposed by other users:
+- Download `JSON .NET For Unity` [here](https://assetstore.unity.com/packages/tools/input-management/json-net-for-unity-11347).
+- Import it into your project folder, BUT only select `Newtonsoft.Json.XML` and `Newtonsoft.Json.dll` under `AOT`.
+- Copy and paste these 2 files from the `AOT` folder into `\Assets\RosSharp\Plugins` folder.
+- Delete the `AOT` folder to prevent multiple copies of `Newtonsoft.Json.XML` and `Newtonsoft.Json.dll`.
+
+**NOTE**: You shouldn't have to do this if you are using the sample Unity `Box` project found in this repository as it has already been replaced.
