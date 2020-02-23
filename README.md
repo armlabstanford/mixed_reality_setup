@@ -58,6 +58,7 @@ This section is adapted from the [official page](https://github.com/siemens/ros-
 
 Note: If you already have Windows 10 installed in your machine, you can simply upgrade to Windows 10 Education by manually entering in the product key as listed [here](https://docs.microsoft.com/en-us/windows/deployment/upgrade/windows-10-edition-upgrades#upgrade-by-manually-entering-a-product-key).
 
+### Software installation
 1. [Turning on Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v#enable-the-hyper-v-role-through-settings)
    - Under Windows search, type **Turn Windows Features on or off**.
    - Select **Hyper-V** and click **OK**.
@@ -85,7 +86,7 @@ Note: If you already have Windows 10 installed in your machine, you can simply u
 5. Starting your virtual machine
    - When you connect to Ubuntu, a prompt for the **Display configuration** will appear. Leaving it as **1366 by 768 pixels** is fine.
    - A *xrdp prompt* will appear. Under **Session**, select **Xorg**. The username and password is your Ubuntu's login credentials.
-   - Proceed to Step 7.
+   - Proceed to *Step 7*.
 
 6. Installing a VM instead of using Hyper-V
    - A popular open source Virtual Machine (VM) is Oracle's [VirtualBox](https://www.virtualbox.org/) that can be downloaded for free. Alternatively, Stanford provides another VM known as [VMware](https://www.vmware.com/) (Fusion on Mac, Workstation on Windows/Linux). To install VMWare, go to this [link](https://stanford.onthehub.com/WebStore/Welcome.aspx) and sign in (top right) with your SUNet ID. Search for "VMware" in the top box and download the respective version for your OS.
@@ -112,3 +113,21 @@ $ sudo apt upgrade
    $ git clone https://github.com/siemens/ros-sharp.git ~/Desktop/ros-sharp
    ```
    - Place the `file_server` package (found under `Desktop/ros-sharp/ros`) in the `src` folder of your Catkin workspace, then build by running `$ catkin_make` from the root folder of your catkin workspace. (Your catkin workspace is found in the home directory of the Ubuntu VM, and is usually called catkin_ws).
+
+11. Installing [Visual Studio 2019](https://visualstudio.microsoft.com/)
+   - Download Visual Studio 2019 Community from [here](https://visualstudio.microsoft.com/downloads/).
+   - During the installation, include the following workloads under Desktop & Mobile:
+     - .NET desktop environment
+     - Desktop development with C++
+     - Universal Windows Platform development
+
+### Building your first Hololens app and communicate with ROS
+
+#### Current set-up
+- Host OS: Windows 10 Education
+- [Ubuntu 18.04](https://ubuntu.com/download/desktop) running on [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/)
+- [Unity 2018.4.x](https://unity3d.com/get-unity/download/archive)
+- [Visual Studio 2019 Community](https://visualstudio.microsoft.com/downloads/)
+- [Windows SDK 18362](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk/)
+
+Note: You'll have to complete the set-up described above 
