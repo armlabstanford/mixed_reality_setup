@@ -42,12 +42,12 @@ Note: If you already have Windows 10 installed in your machine, you can simply u
 
 
 
-## Getting Started with ARCORE-Unity-Android Development
+# Getting Started with ARCORE-Unity-Android Development
 
 For ARCORE-Unity-Android Development refer to android branch.
 
 
-## Getting started with [ROS#](https://github.com/siemens/ros-sharp)
+# Getting started with [ROS#](https://github.com/siemens/ros-sharp)
 [ROS#](https://github.com/siemens/ros-sharp) is a open-source library that allows us to communicate with [ROS](https://www.ros.org/) from [Unity](https://unity.com/), a game engine that is used to develop augmented reality content such as Microsoft's [Hololens](https://www.microsoft.com/en-us/hololens). 
 
 This section is adapted from the [official page](https://github.com/siemens/ros-sharp) of the ROS# library. A detailed tutorial can be found [here](https://github.com/siemens/ros-sharp/wiki).
@@ -56,9 +56,9 @@ This section is adapted from the [official page](https://github.com/siemens/ros-
 - Windows 10 Home will NOT work because [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/) is required for Hololens Emulator.
 - If you are from Stanford, you can obtain a free copy of Windows 10 Education from [here](https://stanford.onthehub.com/WebStore/Welcome.aspx). Sign in (top right) with your SUNet ID and search for "windows 10 education" in the top box. Add to cart and check out, you should obtain a product key.
 
-Note: If you already have Windows 10 installed in your machine, you can simply upgrade to Windows 10 Education by manually entering in the product key as listed [here](https://docs.microsoft.com/en-us/windows/deployment/upgrade/windows-10-edition-upgrades#upgrade-by-manually-entering-a-product-key).
+*Note*: If you already have Windows 10 installed in your machine, you can simply upgrade to Windows 10 Education by manually entering in the product key as listed [here](https://docs.microsoft.com/en-us/windows/deployment/upgrade/windows-10-edition-upgrades#upgrade-by-manually-entering-a-product-key).
 
-### Software installation
+## Software installation
 1. [Turning on Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v#enable-the-hyper-v-role-through-settings)
    - Under Windows search, type **Turn Windows Features on or off**.
    - Select **Hyper-V** and click **OK**.
@@ -121,13 +121,13 @@ $ sudo apt upgrade
      - Desktop development with C++
      - Universal Windows Platform development
 
-### Building your first Hololens app and communicate with ROS
+## Building your first Hololens app and communicate with ROS
 
-#### Current set-up
+### Current set-up:
 - Host OS: Windows 10 Education
 - [Ubuntu 18.04](https://ubuntu.com/download/desktop) running on [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/)
 - [Unity 2018.4.x](https://unity3d.com/get-unity/download/archive)
 - [Visual Studio 2019 Community](https://visualstudio.microsoft.com/downloads/)
 - [Windows SDK 18362](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk/)
 
-Note: You'll have to complete the set-up described above 
+*Note*: You'll have to complete the set-up described [above](#software-installation) before continuing with this section.
