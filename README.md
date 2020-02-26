@@ -186,7 +186,7 @@ $ sudo apt upgrade
 8. Running ROS in Ubuntu
    - Open terminal in Ubuntu and run the following command:
    ```
-   $ roslaunch box-ros box.launch
+   $ roslaunch box box.launch
    ```
 
 9. Running the Hololens App
