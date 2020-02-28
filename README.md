@@ -109,7 +109,7 @@ $ sudo apt upgrade
 
 10. Installing `rosbridge-suite`
    ```
-   $ sudo apt-get install ros-kinetic-rosbridge-server
+   $ sudo apt-get install ros-melodic-rosbridge-server
    $ git clone https://github.com/siemens/ros-sharp.git ~/Desktop/ros-sharp
    ```
    - Place the `file_server` package (found under `Desktop/ros-sharp/ros`) in the `src` folder of your Catkin workspace, then build by running `$ catkin_make` from the root folder of your catkin workspace. (Your catkin workspace is found in the home directory of the Ubuntu VM, and is usually called catkin_ws).
