@@ -1,0 +1,11 @@
+<launch>
+	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+		<param name="port" value="9090"/>
+	</include>
+
+	<!-- <node pkg="tf" type="static_transform_publisher" name="box_broadcaster" args="1 1 1 0 0 0 1 world box 100" /> -->
+
+	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find box_demo)/rviz/box.rviz" />
+	<node name="marker_pub" pkg="box_demo" type="marker_pub.py" output="screen"/>
+	<node name="tf_broadcaster" pkg="box_demo" type="tf_broadcaster.py" output="screen"/>
+</launch>
