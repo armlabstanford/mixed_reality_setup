@@ -28,7 +28,7 @@ class MarkerObj:
     def marker_gen(self):
         marker = Marker()
 
-        marker.header.frame_id = "holo_world"
+        marker.header.frame_id = "world"
         marker.header.stamp = rospy.Time()
 
         # IMPORTANT: If you're creating multiple markers, 
