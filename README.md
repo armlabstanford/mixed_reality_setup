@@ -54,13 +54,13 @@ You can find an overview of the tools required over [here](https://docs.microsof
    - Follow this [link](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment) to set up your `catkin_ws`.
 
 8. Setting up [Gazebo](http://gazebosim.org/) on *Ubuntu*
-```
-$ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
-$ wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
-$ sudo apt-get update
-$ sudo apt-get install gazebo9
-$ sudo apt upgrade
-```
+   ```
+   $ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+   $ wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+   $ sudo apt-get update
+   $ sudo apt-get install gazebo9
+   $ sudo apt upgrade
+   ```
 
 9. Installing `rosbridge-suite` on *Ubuntu*
    ```
@@ -230,15 +230,15 @@ $ sudo apt upgrade
     - Download and extract this current [repository](https://github.com/armlabstanford/mixed_reality_setup).
     - Place the `box_demo` package in the `src` folder of your Catkin workspace in Ubuntu, then build by running `$ catkin_make` from the root folder of your catkin workspace. (Your catkin workspace is found in the home directory of the Ubuntu VM, and is usually called catkin_ws).
     - In the directory `box_demo/scripts` make the file `marker.py` executable by running
-    ```
-    chmod +x marker.py
-    ```
+      ```
+      chmod +x marker.py
+      ```
 
 18. Running ROS in Ubuntu
     - Open terminal in Ubuntu and run the following command:
-    ```
-    $ roslaunch box_demo box.launch
-    ```
+      ```
+      $ roslaunch box_demo box.launch
+      ```
 
 19. Running the HoloLens App
     - Under the `App` folder of your Unity project, you should now see a `demo.sln`. Double click on it to open it in Visual Studio.
