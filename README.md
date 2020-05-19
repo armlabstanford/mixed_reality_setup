@@ -47,7 +47,7 @@ Note: If you already have Windows 10 installed in your machine, you can simply u
 For ARCORE-Unity-Android Development refer to android branch.
 
 
-# Getting Started with communication between ROS and Microsoft's HoloLens using ROS#
+# Getting Started with ROS-HoloLens communication using ROS#
 [ROS#](https://github.com/siemens/ros-sharp) is a open-source library that allows us to communicate with [ROS](https://www.ros.org/) from [Unity](https://unity.com/), a game engine that is used to develop augmented reality content such as Microsoft's [HoloLens](https://www.microsoft.com/en-us/hololens). 
 
 This section is adapted from the [official page](https://github.com/siemens/ros-sharp) of the ROS# library. A detailed tutorial can be found [here](https://github.com/siemens/ros-sharp/wiki).
@@ -115,7 +115,7 @@ $ sudo apt upgrade
    ```
    - Place the `file_server` package (found under `Desktop/ros-sharp/ros`) in the `src` folder of your Catkin workspace, then build by running `$ catkin_make` from the root folder of your catkin workspace. (Your catkin workspace is found in the home directory of the Ubuntu VM, and is usually called catkin_ws).
 
-### Installing Unity, Visual Studios and HoloLens emulator
+### Installing Visual Studios, HoloLens emulator, Unity and Mixed Reality Toolkit
 1. If you are planning to use the HoloLens emulator, ensure that you have enabled Hyper-V as described in [Step 1](#software-installation).
 
 2. Installing **Visual Studio 2019** on *Windows*
@@ -143,6 +143,17 @@ $ sudo apt upgrade
      - **UWP Build Support (IL2CPP)**
      - **UWP Build Support (.NET)**
 
+6. Downloading [Mixed Reality Toolkit (MRTK)](https://github.com/microsoft/MixedRealityToolkit-Unity)
+   - MRTK provides the basic building blocks for Unity development on HoloLens and includes a wide range of prefabs and scripts.
+   - Go to [MRTK release page](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases).
+   - Under **Assets**, download:
+     - **Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage**
+     - **(Optional)** Microsoft.MixedRealityToolkit.Unity.Extensions.unitypackage
+     - **(Optional)** Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage
+     - **(Optional)** Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage
+
+   
+
 ## Building your first Hololens app and communicating with ROS
 
 ### Current set-up:
@@ -153,6 +164,13 @@ $ sudo apt upgrade
 - [Windows SDK 18362](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk/)
 
 *Note*: You'll have to complete the set-up described [above](#software-installation) before continuing with this section.
+
+1. Starting a new Unity project
+   - Open Unity Hub and click on **New Project**.
+   - Leave the Template as **3D** and give your project any name you like.
+   - Click on **Create** to start the project.
+   
+2. 
 
 1. Obtaining the sample ROS files
    - Download and extract this repository.
