@@ -2,7 +2,6 @@
 
 For ARCORE-Unity-Android Development refer to android branch.
 
-
 # Getting Started with ROS-HoloLens communication
 [ROS#](https://github.com/siemens/ros-sharp) is a open-source library that allows us to communicate with [ROS](https://www.ros.org/) from [Unity](https://unity.com/), a game engine that is used to develop augmented reality content such as Microsoft's [HoloLens](https://www.microsoft.com/en-us/hololens). 
 
