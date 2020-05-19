@@ -93,13 +93,13 @@ You can find an overview of the tools required over [here](https://docs.microsof
    - A *xrdp prompt* will appear. Under **Session**, select **Xorg**. The username and password is your Ubuntu's login credentials.
    - Proceed to *Step 7*.
 
-6. Setting up ROS on Ubuntu
+6. Setting up ROS on *Ubuntu*
    - Follow this [link](http://wiki.ros.org/melodic/Installation/Ubuntu) to install ROS on your **virtual machine**.
 
-7. Configuring your ROS environment on Ubuntu
+7. Configuring your ROS environment on *Ubuntu*
    - Follow this [link](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment) to set up your `catkin_ws`.
 
-8. Setting up [Gazebo](http://gazebosim.org/) on Ubuntu
+8. Setting up [Gazebo](http://gazebosim.org/) on *Ubuntu*
 ```
 $ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 $ wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
@@ -108,7 +108,7 @@ $ sudo apt-get install gazebo9
 $ sudo apt upgrade
 ```
 
-9. Installing `rosbridge-suite` on Ubuntu
+9. Installing `rosbridge-suite` on *Ubuntu*
    ```
    $ sudo apt-get install ros-melodic-rosbridge-server
    $ git clone https://github.com/siemens/ros-sharp.git ~/Desktop/ros-sharp
@@ -118,30 +118,30 @@ $ sudo apt upgrade
 ### Installing Unity, Visual Studios and HoloLens emulator
 1. If you are planning to use the HoloLens emulator, ensure that you have enabled Hyper-V as described in [Step 1](#software-installation).
 
-2. Installing [Visual Studio 2019](https://visualstudio.microsoft.com/) in Windows
-   - Download Visual Studio 2019 Community from [here](https://visualstudio.microsoft.com/downloads/).
+2. Installing **Visual Studio 2019** on *Windows*
+   - Download **Visual Studio 2019 Community** from [here](https://visualstudio.microsoft.com/downloads/).
    - During the installation, include the following workloads under Desktop & Mobile:
      - **.NET desktop environment**
      - **Desktop development with C++**
      - **Universal Windows Platform development**
      - Within the UWP workload, check the following: **USB Device Connectivity**
 
-3. Installing HoloLens emulator
-   - Follow the instructions on this [page] (https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator) to download and install the emulator.
+3. Installing **HoloLens emulator (1st gen)** on *Windows*
+   - Follow the instructions on this [page](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator) to download and install the emulator.
    
 4. [Testing](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator#deploying-apps-to-the-hololens-emulator) the HoloLens emulator
-   - Start Visual Studio 2019 and try to create a new Holographic DirectX 11 App (Universal Windows). If it works, then you have all the required libraries in Visual Studios. Otherwise, add the proper workloads as stated [here](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools).
+   - Start Visual Studio 2019 and try to create a new **Holographic DirectX 11 App (Universal Windows)**. If it works, then you have all the required libraries in Visual Studios. Otherwise, add the proper workloads as stated [here](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools).
    - For HoloLens Emulator (1st gen), ensure that Platform is set to **x86** on the top bar. 
    - On the right of **x86**, there should be a green play button with a drop-down menu. Select **HoloLens Emulator** as the target device for debugging.
    - Click on the green play button to run the emulator.
    - If everything works, then the emulator is set up properly.
    
-5. Installing Unity editor
-   - [Download] and install Unity hub.(https://unity3d.com/get-unity/download)
+5. Installing **Unity** editor on *Windows*
+   - [Download](https://unity3d.com/get-unity/download) and install Unity hub.
    - Open up Unity Hub. Under **Installs** on the left, click **Add** and install the **2018.4.x** version.
    - Ensure that you select the following modules:
-     - UWP Build Support (IL2CPP)
-     - UWP Build Support (.NET)
+     - **UWP Build Support (IL2CPP)**
+     - **UWP Build Support (.NET)**
 
 ## Building your first Hololens app and communicating with ROS
 
