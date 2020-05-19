@@ -214,21 +214,26 @@ $ sudo apt upgrade
    - On the top menu bar of your Unity editor, you should see `Mixed Reality Toolkit`.
    - Under this, click on `Add to Scene and Configure..`.
 
-9. Creating a Cube in the scene
-   - Under the SampleScene on the left, right click and create a **3D Object** > **Cube**.
-   - Click on `Cube` to select it.
-   - The `Inspector` window is shown on the right. You should see properties such as `Transform`, `Cube (Mesh Filter)`, `Mesh Renderer` etc.
-   - Under `Transform`, modify the size of the cube by changing the scale in the X, Y, Z directions to **0.2**.
-   - Under `Transform`, shift the cube to the front of the camera by changing the location in the Z direction to **2**.
-   - You may also wish to change the cube's color. Follow the instruction [here](http://mammothinteractive.com/changing-a-cubes-color-unity-tutorial/).
+9. Modifying plugin in Ros Sharp
+   - Download this repository.
+   - Under `Plugins`, you should see two files: `Newtonsoft.Json` and `Newtonsoft.Json.dll`.
+   - In your Unity project, under `Assets/RosSharp/Plugins`, replace the existing `Newtonsoft.Json` and `Newtonsoft.Json.dll` files with the ones you obtained from this repository.
+
+10. Creating a Cube in the scene
+    - Under the SampleScene on the left, right click and create a **3D Object** > **Cube**.
+    - Click on `Cube` to select it.
+    - The `Inspector` window is shown on the right. You should see properties such as `Transform`, `Cube (Mesh Filter)`, `Mesh Renderer` etc.
+    - Under `Transform`, modify the size of the cube by changing the scale in the X, Y, Z directions to **0.2**.
+    - Under `Transform`, shift the cube to the front of the camera by changing the location in the Z direction to **2**.
+    - You may also wish to change the cube's color. Follow the instruction [here](http://mammothinteractive.com/changing-a-cubes-color-unity-tutorial/).
    
-10. Adding Bounding Box and Manipulation Handler to your Cube in the scene
+11. Adding Bounding Box and Manipulation Handler to your Cube in the scene
     - Ensure that `Cube` is still selected under the SampleScene on the left so that we are modifying the properties for the cube.
     - Under the `Inspector` window on the right, click on `Add Component` and add the following:
        - `Bounding Box`
        - `Manipulation Handler`
        
-11. Adding RosConnector to your Unity scene
+12. Adding RosConnector to your Unity scene
     - Under the SampleScene on the left, right click and `Create Empty`.
     - Right click on your newly created GameObject and rename it to **RosConnector**.
     - Click on `RosConnector`. On the right, under `Inspector`, you should only see `Transform` for now. Click on `Add Component` and add the following:
@@ -237,7 +242,7 @@ $ sudo apt upgrade
     - `Ros Connector` should be automatically added for you.
     - `Pose Publisher (Script)` and `Scale Publisher (Script)` are scripts that help to publish information from HoloLens to ROS. A separate script must be written for different ROS message types. In this case, `Pose Publisher (Script)` publishes a [Pose Message](https://docs.ros.org/api/geometry_msgs/html/msg/Pose.html). The topic that is published can be changed under `Topic`.
 
-12. Adding the Cube's Transform to the publishers
+13. Adding the Cube's Transform to the publishers
     - Drag and drop your `Cube` from the SampleScene on the left to the `Published Transform` on the right under `Pose Publisher`. Do the same for `Scale Publisher`.
     - Modify your topic for `Pose Publisher` to be **/pose**. This is the topic that we subscribe to in ROS later on.
     - Modify your topic for `Scale Publisher` to be **/scale**. This is the topic that we subscribe to in ROS later on.
@@ -248,10 +253,10 @@ $ sudo apt upgrade
       - `Topic`: /scale
       - `Published Transform`: Cube (Transform)
 
-13. Finding the IP address of your Ubuntu machine
+14. Finding the IP address of your Ubuntu machine
     - Find the IP address of your Ubuntu OS by using the `$ ifconfig` command in an Ubuntu terminal. If your Network Adapter was set-up correctly in Step 4 during the [installation phase](#software-installation), you should see the IP address listed under `eth0`. For example, it could be `inet 192.168.137.66`.
     
-14. Modifying IP address under `ROSConnector` in Unity
+15. Modifying IP address under `ROSConnector` in Unity
     - Ensure that `RosConnector` is still selected under the SampleScene on the left so that we are modifying the properties for it.
     - Under `Inspector` on the right, copy and paste the IP address under `Ros Connector (Script)` > `Ros Bridge Server Url` and append `port 9090`. For example, it could be `ws://192.168.137.66:9090`.
     - `Ros Connector (Script)` is used to identify the IP address of our Ubuntu OS that is deployed in Hyper-V. 
@@ -262,11 +267,11 @@ $ sudo apt upgrade
       - `Protocol`: Web Socket UWP
       - `Ros Bridge Server Url`: ws://192.168.137.66:9090 (**DEPENDS ON YOUR IP ADDRESS**)
       
-15. Building the HoloLens App from Unity
+16. Building the HoloLens App from Unity
     - We are finally ready to build the app. Before exporting your app, remember to save your SampleScene in Unity so that we can continue modifying the app next time.
     - Under `File` > `Build Settings`, ensure `Universal Windows Platform` is selected as the build platform and click on `Build`. When the prompt for the file location appears, create a new folder called `App`, select it and click `Select Folder`.
 
-16. Obtaining the sample ROS files
+17. Obtaining the sample ROS files
    - Download and extract this repository.
    - Place the `box-ros` package in the `src` folder of your Catkin workspace in Ubuntu, then build by running `$ catkin_make` from the root folder of your catkin workspace. (Your catkin workspace is found in the home directory of the Ubuntu VM, and is usually called catkin_ws).
    - In the directory `gazebo_simulation_scene/scripts` make the file `update_pose.py` executable by running
@@ -297,8 +302,8 @@ $ sudo apt upgrade
 
 A quick fix is proposed by other users:
 - Download `JSON .NET For Unity` [here](https://assetstore.unity.com/packages/tools/input-management/json-net-for-unity-11347).
-- Import it into your project folder, BUT only select `Newtonsoft.Json.XML` and `Newtonsoft.Json.dll` under `AOT`.
-- Copy and paste these 2 files from the `AOT` folder into `\Assets\RosSharp\Plugins` folder.
-- Delete the `AOT` folder to prevent multiple copies of `Newtonsoft.Json.XML` and `Newtonsoft.Json.dll`.
+- Import it into your project folder, BUT only select `Newtonsoft.Json` and `Newtonsoft.Json.dll` under `AOT`.
+- Copy and paste these 2 files (**NOT the .meta files**) from `Assets\JsonDotNet\Assemblies\AOT` folder into `\Assets\RosSharp\Plugins` folder.
+- Delete the `JsonDotNet` folder under `Assets` to prevent multiple copies of `Newtonsoft.Json.XML` and `Newtonsoft.Json.dll`.
 
-**NOTE**: You shouldn't have to do this if you are using the sample Unity `Box` project found in this repository as it has already been replaced.
+**NOTE**: You shouldn't have to do this if you followed the instruction for Step .
