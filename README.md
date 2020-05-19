@@ -150,7 +150,7 @@ $ sudo apt upgrade
      - **(Optional)** Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage
      - **(Optional)** Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage
 
-## Building your first Hololens app and communicating with ROS
+## Building your first HoloLens app and communicating with ROS
 
 ### Current set-up:
 - Host OS: Windows 10 Education
@@ -206,7 +206,9 @@ $ sudo apt upgrade
    - To put the `RosSharp` folder inside your Unity project, you can either drag and drop it into the Assets window in the Unity editor, or locate the file location of your project in your Windows File Explorer and place it there.
    
 7. Installing additional scripts to your Unity project
-   - Under this [Github repository](https://github.com/armlabstanford/mixed_reality_setup), download `Unity scripts` and place the 3 scripts inside it into your Unity project under `Assets` > `RosSharp` > `Scripts` > `RosBridgeClient` > `RosCommuncation`.
+   - Download and extract this repository.
+   - Under `Unity scripts`, you should see 3 scripts.
+   - Place the 3 scripts inside your Unity project under `Assets/RosSharp/Scripts/RosBridgeClient/RosCommuncation`.
 
    **IMPORTANT**: Note that there is a difference between the [official version of ROS#](https://github.com/siemens/ros-sharp) and the [UWP version](https://github.com/siemens/ros-sharp). HoloLens is a UWP device.
 
@@ -215,7 +217,7 @@ $ sudo apt upgrade
    - Under this, click on `Add to Scene and Configure..`.
 
 9. Modifying plugin in Ros Sharp
-   - Download this repository.
+   - Download and extract this repository.
    - Under `Plugins`, you should see two files: `Newtonsoft.Json` and `Newtonsoft.Json.dll`.
    - In your Unity project, under `Assets/RosSharp/Plugins`, replace the existing `Newtonsoft.Json` and `Newtonsoft.Json.dll` files with the ones you obtained from this repository.
 
@@ -273,23 +275,23 @@ $ sudo apt upgrade
 
 17. Obtaining the sample ROS files
    - Download and extract this repository.
-   - Place the `box-ros` package in the `src` folder of your Catkin workspace in Ubuntu, then build by running `$ catkin_make` from the root folder of your catkin workspace. (Your catkin workspace is found in the home directory of the Ubuntu VM, and is usually called catkin_ws).
-   - In the directory `gazebo_simulation_scene/scripts` make the file `update_pose.py` executable by running
+   - Place the `box_demo` package in the `src` folder of your Catkin workspace in Ubuntu, then build by running `$ catkin_make` from the root folder of your catkin workspace. (Your catkin workspace is found in the home directory of the Ubuntu VM, and is usually called catkin_ws).
+   - In the directory `box_demo/scripts` make the file `marker.py` executable by running
    ```
-   chmod +x update_pose.py
-   ```
- 
-8. Running ROS in Ubuntu
-   - Open terminal in Ubuntu and run the following command:
-   ```
-   $ roslaunch box box.launch
+   chmod +x marker.py
    ```
 
-9. Running the Hololens App
-    - Under the `App` folder of your project, you should now see a `box.sln`. Double click on it to open it in Visual Studio.
+18. Running ROS in Ubuntu
+   - Open terminal in Ubuntu and run the following command:
+   ```
+   $ roslaunch box_demo box.launch
+   ```
+
+19. Running the HoloLens App
+    - Under the `App` folder of your Unity project, you should now see a `demo.sln`. Double click on it to open it in Visual Studio.
     - In Visual Studio top menu bar, change to `Release`, `x86` and `HoloLens Emulator 10.0.x`. Then click on the green Play button located on the left of `HoloLens Emulator 10.0.x`.
     - Once the emulator is running, you should see `Client connected.  1 clients total.` in your Ubuntu terminal.
-    - Use the arrow keys (to move user's gaze) and WASD (to walk around) in the emulator and find the red box. Using your spacebar, you can pick the box and place it elsewhere by using the spacebar to drop it off. The location of the box in Gazebo should also update as you move the box around.
+    - Use the arrow keys (to move user's gaze) and WASD (to walk around) in the emulator and find the box. Using your spacebar, you can pick the box and place it elsewhere by using the spacebar to drop it off. The location of the box in `rviz` should also update as you move the box around.
 
 ## Troubleshooting tips
 **Q: I managed to build the HoloLens app and run it in the emulator but it is not connecting with ROS.**
@@ -306,4 +308,4 @@ A quick fix is proposed by other users:
 - Copy and paste these 2 files (**NOT the .meta files**) from `Assets\JsonDotNet\Assemblies\AOT` folder into `\Assets\RosSharp\Plugins` folder.
 - Delete the `JsonDotNet` folder under `Assets` to prevent multiple copies of `Newtonsoft.Json.XML` and `Newtonsoft.Json.dll`.
 
-**NOTE**: You shouldn't have to do this if you followed the instruction for Step .
+**NOTE**: You shouldn't have to do this if you followed the instruction for [Step 9](#building-your-first-hololens-app-and-communicating-with-ros).
