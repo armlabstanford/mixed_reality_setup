@@ -110,19 +110,17 @@ $ sudo apt upgrade
 9. Installing `rosbridge-suite` on *Ubuntu*
    ```
    $ sudo apt-get install ros-melodic-rosbridge-server
-   $ git clone https://github.com/siemens/ros-sharp.git ~/Desktop/ros-sharp
    ```
-   - Place the `file_server` package (found under `Desktop/ros-sharp/ros`) in the `src` folder of your Catkin workspace, then build by running `$ catkin_make` from the root folder of your catkin workspace. (Your catkin workspace is found in the home directory of the Ubuntu VM, and is usually called catkin_ws).
 
 ### Installing Visual Studios, HoloLens emulator, Unity and Mixed Reality Toolkit
 1. If you are planning to use the HoloLens emulator, ensure that you have enabled Hyper-V as described in [Step 1](#software-installation).
 
 2. Installing **Visual Studio 2019** on *Windows*
    - Download **Visual Studio 2019 Community** from [here](https://visualstudio.microsoft.com/downloads/).
-   - During the installation, include the following workloads under Desktop & Mobile:
-     - **Desktop development with C++**
-     - **Universal Windows Platform development**
-     - Within the UWP workload, check the following: **USB Device Connectivity**
+   - During the installation, include the following workloads under `Desktop & Mobile`:
+     - `Desktop development with C++`
+     - `Universal Windows Platform development`
+     - Within the UWP workload, check the following: `USB Device Connectivity`
 
 3. Installing **HoloLens emulator (1st gen)** on *Windows*
    - Follow the instructions on this [page](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator) to download and install the emulator.
@@ -135,20 +133,20 @@ $ sudo apt upgrade
    - If everything works, then the emulator is set up properly.
    
 5. Installing **Unity** editor on *Windows*
-   - [Download](https://unity3d.com/get-unity/download) and install Unity hub.
+   - [Download](https://unity3d.com/get-unity/download) and install Unity Hub.
    - Open up Unity Hub. Under `Installs` on the left, click `Add` and install the `2018.4.x` version.
    - Ensure that you select the following modules:
-     - **UWP Build Support (IL2CPP)**
-     - **UWP Build Support (.NET)**
+     - `UWP Build Support (IL2CPP)`
+     - `UWP Build Support (.NET)`
 
 6. Downloading [Mixed Reality Toolkit (MRTK)](https://github.com/microsoft/MixedRealityToolkit-Unity)
    - MRTK provides the basic building blocks for Unity development on HoloLens and includes a wide range of prefabs and scripts.
    - Go to [MRTK release page](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases).
    - Under `Assets`, download:
-     - **Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage**
-     - **(Optional)** Microsoft.MixedRealityToolkit.Unity.Extensions.unitypackage
-     - **(Optional)** Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage
-     - **(Optional)** Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage
+     - `Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage`
+     - **(Optional)** `Microsoft.MixedRealityToolkit.Unity.Extensions.unitypackage`
+     - **(Optional)** `Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage`
+     - **(Optional)** `Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage`
 
 ## Building your first HoloLens app and communicating with ROS
 
@@ -194,30 +192,30 @@ $ sudo apt upgrade
      - `RemoteSystem`
    
 4. Modifying audio settings in Unity
-   - In Unity, under `Edit`> `Project Settings` > `Audio`, change the `Spatializer Plugin` to `MS HRTF Spatializer`.
+   - In Unity, under `Edit`> `Project Settings` > `Audio`, set the `Spatializer Plugin` to `MS HRTF Spatializer`.
 
 5. Importing MRTK packages to your Unity project
    - Follow the instructions [here](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html#import-mrtk-packages-into-your-unity-project).
    - We recommend only importing **Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage** for now to reduce the size of the file later on.
 
-6. Importing ROS# (UWP version) to your Unity project
+6. Importing ROS# (**UWP version**) to your Unity project
    - Download the file [here](https://github.com/dwhit/ros-sharp).
-   - Unzip the file and you will find a package called `RosSharp` under `ros-sharp-master` > `Unity3D` > `Assets`. 
+   - Unzip the file and you will find a package called `RosSharp` under `ros-sharp-master/Unity3D/Assets`. 
    - To put the `RosSharp` folder inside your Unity project, you can either drag and drop it into the Assets window in the Unity editor, or locate the file location of your project in your Windows File Explorer and place it there.
    
+   **IMPORTANT**: Note that there is a difference between the [official version of ROS#](https://github.com/siemens/ros-sharp) and the [UWP version](https://github.com/siemens/ros-sharp). HoloLens is a UWP device.
+   
 7. Installing additional scripts to your Unity project
-   - Download and extract this repository.
+   - Download and extract this current [repository](https://github.com/armlabstanford/mixed_reality_setup).
    - Under `Unity scripts`, you should see 3 scripts.
    - Place the 3 scripts inside your Unity project under `Assets/RosSharp/Scripts/RosBridgeClient/RosCommuncation`.
-
-   **IMPORTANT**: Note that there is a difference between the [official version of ROS#](https://github.com/siemens/ros-sharp) and the [UWP version](https://github.com/siemens/ros-sharp). HoloLens is a UWP device.
 
 8. Adding Mixed Reality Toolkit to the scene
    - On the top menu bar of your Unity editor, you should see `Mixed Reality Toolkit`.
    - Under this, click on `Add to Scene and Configure..`.
 
 9. Modifying plugin in Ros Sharp
-   - Download and extract this repository.
+   - Download and extract this current [repository](https://github.com/armlabstanford/mixed_reality_setup).
    - Under `Plugins`, you should see two files: `Newtonsoft.Json` and `Newtonsoft.Json.dll`.
    - In your Unity project, under `Assets/RosSharp/Plugins`, replace the existing `Newtonsoft.Json` and `Newtonsoft.Json.dll` files with the ones you obtained from this repository.
 
@@ -256,7 +254,7 @@ $ sudo apt upgrade
       - `Published Transform`: Cube (Transform)
 
 14. Finding the IP address of your Ubuntu machine
-    - Find the IP address of your Ubuntu OS by using the `$ ifconfig` command in an Ubuntu terminal. If your Network Adapter was set-up correctly in Step 4 during the [installation phase](#software-installation), you should see the IP address listed under `eth0`. For example, it could be `inet 192.168.137.66`.
+    - Find the IP address of your Ubuntu OS by using the `$ ifconfig` command in an Ubuntu terminal. If your Network Adapter was set-up correctly in [Step 4](#software-installation) during the installation phase, you should see the IP address listed under `eth0`. For example, it could be `inet 192.168.137.66`.
     
 15. Modifying IP address under `ROSConnector` in Unity
     - Ensure that `RosConnector` is still selected under the SampleScene on the left so that we are modifying the properties for it.
@@ -267,25 +265,25 @@ $ sudo apt upgrade
       - `Timeout`: 10
       - `Serializer`: JSON
       - `Protocol`: Web Socket UWP
-      - `Ros Bridge Server Url`: ws://192.168.137.66:9090 (**DEPENDS ON YOUR IP ADDRESS**)
+      - `Ros Bridge Server Url`: ws://192.168.137.66:9090 (**depending on your IP address**)
       
 16. Building the HoloLens App from Unity
     - We are finally ready to build the app. Before exporting your app, remember to save your SampleScene in Unity so that we can continue modifying the app next time.
     - Under `File` > `Build Settings`, ensure `Universal Windows Platform` is selected as the build platform and click on `Build`. When the prompt for the file location appears, create a new folder called `App`, select it and click `Select Folder`.
 
 17. Obtaining the sample ROS files
-   - Download and extract this repository.
-   - Place the `box_demo` package in the `src` folder of your Catkin workspace in Ubuntu, then build by running `$ catkin_make` from the root folder of your catkin workspace. (Your catkin workspace is found in the home directory of the Ubuntu VM, and is usually called catkin_ws).
-   - In the directory `box_demo/scripts` make the file `marker.py` executable by running
-   ```
-   chmod +x marker.py
-   ```
+    - Download and extract this current [repository](https://github.com/armlabstanford/mixed_reality_setup).
+    - Place the `box_demo` package in the `src` folder of your Catkin workspace in Ubuntu, then build by running `$ catkin_make` from the root folder of your catkin workspace. (Your catkin workspace is found in the home directory of the Ubuntu VM, and is usually called catkin_ws).
+    - In the directory `box_demo/scripts` make the file `marker.py` executable by running
+    ```
+    chmod +x marker.py
+    ```
 
 18. Running ROS in Ubuntu
-   - Open terminal in Ubuntu and run the following command:
-   ```
-   $ roslaunch box_demo box.launch
-   ```
+    - Open terminal in Ubuntu and run the following command:
+    ```
+    $ roslaunch box_demo box.launch
+    ```
 
 19. Running the HoloLens App
     - Under the `App` folder of your Unity project, you should now see a `demo.sln`. Double click on it to open it in Visual Studio.
