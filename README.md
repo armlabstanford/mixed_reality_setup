@@ -3,30 +3,37 @@
 For ARCORE-Unity-Android Development refer to android branch.
 
 # Getting Started with ROS-HoloLens communication
-[ROS#](https://github.com/siemens/ros-sharp) is a open-source library that allows us to communicate with [ROS](https://www.ros.org/) from [Unity](https://unity.com/), a game engine that is used to develop augmented reality content such as Microsoft's [HoloLens](https://www.microsoft.com/en-us/hololens). 
 
-This section is adapted from the [official page](https://github.com/siemens/ros-sharp) of the ROS# library. A detailed tutorial can be found [here](https://github.com/siemens/ros-sharp/wiki).
+This page is organized with the following sections:
+- [Software installation](#software-installation)
+  - [Installing Ubuntu OS and ROS on Windows OS using Hyper-V](#installing-ubuntu-os-and-ros-on-windows-os-using-hyper-v)
+  - [Installing Visual Studios, HoloLens emulator, Unity and Mixed Reality Toolkit](#installing-visual-studios-hololens-emulator-unity-and-mixed-reality-toolkit)
+- [Building your first HoloLens app and communicating with ROS](#building-your-first-hololens-app-and-communicating-with-ros)
+- [Troubleshooting tips](#troubleshooting-tips)
+
+[ROS#](https://github.com/siemens/ros-sharp) is an open-source library that allows us to communicate with [ROS](https://www.ros.org/) from [Unity](https://unity.com/), a game engine that is used to develop augmented reality content for devices such as Microsoft's [HoloLens](https://www.microsoft.com/en-us/hololens). 
+
+Part of this section is adapted from the [official page](https://github.com/siemens/ros-sharp) of the ROS# library.
 
 **Requirements**: Windows 10 Enterprise, Pro, or Education
-- Windows 10 Home will NOT work because [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/) is required for HoloLens Emulator.
+- Windows 10 Home will **NOT** work because [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/) is required for HoloLens Emulator.
+  - Hyper-V is also capable of running VMs such as Ubuntu OS. We recommend using Hyper-V to run Ubuntu OS because other VMs (e.g. Virtual Box / VMWare) do not work once Hyper-V is enabled. [Why?](https://seriouscodeblog.wordpress.com/2017/02/21/and-you-can-write-hololens-apps-in-macos-linux-too-part-1/)
 - If you are from Stanford, you can obtain a free copy of Windows 10 Education from [here](https://stanford.onthehub.com/WebStore/Welcome.aspx). Sign in (top right) with your SUNet ID and search for "windows 10 education" in the top box. Add to cart and check out, you should obtain a product key.
 
 *Note*: If you already have Windows 10 installed in your machine, you can simply upgrade to Windows 10 Education by manually entering in the product key as listed [here](https://docs.microsoft.com/en-us/windows/deployment/upgrade/windows-10-edition-upgrades#upgrade-by-manually-entering-a-product-key).
 
 ## Software installation
-You can find an overview of the tools required over [here](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools). Alternatively, you may follow the steps below for a more detailed instruction.
+You can find an overview of the tools required for developing apps on the HoloLens over [here](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools). Alternatively, you may follow the steps below for a more detailed instruction.
 
-### Installing Ubuntu OS / ROS on Windows using Hyper-V
+### Installing Ubuntu OS and ROS on Windows OS using Hyper-V
 1. [Turning on Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v#enable-the-hyper-v-role-through-settings)
-   - Enable developer mode on your PC at `Settings` > `Update & Security` > `For developers`. 
+   - Enable developer mode on your Windows PC at `Settings` > `Update & Security` > `For developers`. 
    - Under Windows search, type `Turn Windows Features on or off`.
    - Select `Hyper-V` and click `OK`.
-   - You should be prompted to restart your Windows.
-   
-   **Note**: You need to have Hyper-V enabled to be able to run the HoloLens emulator. Hyper-V is also capable of running VMs such as Ubuntu OS. We recommend using Hyper-V to run Ubuntu OS because other VMs (e.g. Virtual Box / VMWare) do not work once Hyper-V is enabled. [Why?](https://seriouscodeblog.wordpress.com/2017/02/21/and-you-can-write-hololens-apps-in-macos-linux-too-part-1/)
-
+   - You should be prompted to restart your Windows PC.
+ 
 2. Creating network switch
-   - Open `Hyper-V Manager`. Under `Action` on the top tab, click on `Virtual Switch Manager`.
+   - Open `Hyper-V Manager` in Windows. Under `Action` on the top tab, click on `Virtual Switch Manager`.
    - Create a `Internal` virtual switch and name it **InternalSwitch**. Proceed with the default settings.
 
 3. Enabling internet connection in virtual machine
@@ -68,7 +75,7 @@ You can find an overview of the tools required over [here](https://docs.microsof
    ```
 
 ### Installing Visual Studios, HoloLens emulator, Unity and Mixed Reality Toolkit
-1. If you are planning to use the HoloLens emulator, ensure that you have enabled Hyper-V as described in [Step 1](#software-installation).
+1. If you are planning to use the HoloLens emulator, ensure that you have enabled Hyper-V as described in [Step 1](#software-installation) above.
 
 2. Installing **Visual Studio 2019** on *Windows*
    - Download **Visual Studio 2019 Community** from [here](https://visualstudio.microsoft.com/downloads/).
@@ -82,10 +89,10 @@ You can find an overview of the tools required over [here](https://docs.microsof
    
 4. [Testing](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator#deploying-apps-to-the-hololens-emulator) the HoloLens emulator
    - Start Visual Studio 2019 and try to create a new `Holographic DirectX 11 App (Universal Windows)`. If it works, then you have all the required libraries in Visual Studios. Otherwise, add the proper workloads as stated [here](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools).
-   - For HoloLens Emulator (1st gen), ensure that Platform is set to `x86` on the top bar. 
-   - On the right of `x86`, there should be a green play button with a drop-down menu. Select `HoloLens Emulator` as the target device for debugging.
+   - In Visual Studio, ensure that Platform is set to `x86` on the top bar. 
+   - On the right of `x86`, there should be a green play button with a drop-down menu. Select `HoloLens Emulator` under the drop-down menu as the target device for debugging.
    - Click on the green play button to run the emulator.
-   - If everything works, then the emulator is set up properly.
+     - If everything works, then the emulator is set up properly.
    
 5. Installing **Unity** editor on *Windows*
    - [Download](https://unity3d.com/get-unity/download) and install Unity Hub.
@@ -94,8 +101,8 @@ You can find an overview of the tools required over [here](https://docs.microsof
      - `UWP Build Support (IL2CPP)`
      - `UWP Build Support (.NET)`
 
-6. Downloading [Mixed Reality Toolkit (MRTK)](https://github.com/microsoft/MixedRealityToolkit-Unity)
-   - MRTK provides the basic building blocks for Unity development on HoloLens and includes a wide range of prefabs and scripts.
+6. Downloading **Mixed Reality Toolkit (MRTK)**
+   - [MRTK](https://github.com/microsoft/MixedRealityToolkit-Unity) provides the basic building blocks for Unity development on HoloLens and includes a wide range of prefabs and scripts.
    - Go to [MRTK release page](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases).
    - Under `Assets`, download:
      - `Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage`
@@ -107,9 +114,9 @@ You can find an overview of the tools required over [here](https://docs.microsof
 
 ### Current set-up:
 - Host OS: Windows 10 Education
-- [Ubuntu 18.04](https://ubuntu.com/download/desktop) running on [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/)
-- [Unity 2018.4.x](https://unity3d.com/get-unity/download/archive)
-- [Visual Studio 2019 Community](https://visualstudio.microsoft.com/downloads/)
+- Ubuntu 18.04 running on Hyper-V
+- Unity 2018.4.x
+- Visual Studio 2019 Community
 - [Windows SDK 18362](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk/)
 
 *Note*: You'll have to complete the set-up described [above](#software-installation) before continuing with this section.
@@ -117,6 +124,7 @@ You can find an overview of the tools required over [here](https://docs.microsof
 1. Starting a new Unity project
    - Open Unity Hub and click on `New Project`.
    - Leave the Template as `3D` and give your project any name you like. For example, we can name it as **box** for this demo.
+     - Remember the location where the Unity project is saved under.
    - Click on `Create` to start the project.
    
 2. Modifying build settings in Unity
@@ -134,7 +142,7 @@ You can find an overview of the tools required over [here](https://docs.microsof
 3. Modifying player settings in Unity
    - In Unity, under `Edit`> `Project Settings` > `Player`, select the Windows icon. 
    - Under `XR Settings`,
-     - ensure `Virtual Reality Supported` is checked
+     - Ensure `Virtual Reality Supported` is checked
      - Change `Depth Format` to `16-bit depth`
      - Change `Stereo Rendering Mode` to `Single Pass Instanced`
    - Under `Other Settings` > `Configuration`, select the following:
@@ -156,7 +164,7 @@ You can find an overview of the tools required over [here](https://docs.microsof
 6. Importing ROS# (**UWP version**) to your Unity project
    - Download the file [here](https://github.com/dwhit/ros-sharp).
    - Unzip the file and you will find a package called `RosSharp` under `ros-sharp-master/Unity3D/Assets`. 
-   - To put the `RosSharp` folder inside your Unity project, you can either drag and drop it into the Assets window in the Unity editor, or locate the file location of your project in your Windows File Explorer and place it there.
+   - To put the `RosSharp` folder inside your Unity project, you can either drag and drop it into the Assets window in the Unity editor, or locate the file location of your project using your Windows File Explorer and place it there.
    
    **IMPORTANT**: Note that there is a difference between the [official version of ROS#](https://github.com/siemens/ros-sharp) and the [UWP version](https://github.com/siemens/ros-sharp). HoloLens is a UWP device.
    
@@ -169,17 +177,18 @@ You can find an overview of the tools required over [here](https://docs.microsof
    - On the top menu bar of your Unity editor, you should see `Mixed Reality Toolkit`.
    - Under this, click on `Add to Scene and Configure..`.
 
-9. Modifying plugin in Ros Sharp
+9. Modifying plugin in RosSharp
    - Download and extract this current [repository](https://github.com/armlabstanford/mixed_reality_setup).
    - Under `Plugins`, you should see two files: `Newtonsoft.Json` and `Newtonsoft.Json.dll`.
    - In your Unity project, under `Assets/RosSharp/Plugins`, replace the existing `Newtonsoft.Json` and `Newtonsoft.Json.dll` files with the ones you obtained from this repository.
 
 10. Creating a Cube in the scene
-    - Under the SampleScene on the left, right click and create a **3D Object** > **Cube**.
-    - Click on `Cube` to select it.
+    - Under the SampleScene on the left, right click and create a `3D Object` > `Cube`.
+    - Click on the newly created `Cube` to select it.
     - The `Inspector` window is shown on the right. You should see properties such as `Transform`, `Cube (Mesh Filter)`, `Mesh Renderer` etc.
-    - Under `Transform`, modify the size of the cube by changing the scale in the X, Y, Z directions to **0.2**.
-    - Under `Transform`, shift the cube to the front of the camera by changing the location in the Z direction to **2**.
+    - Under `Transform`, 
+      - Modify the size of the cube by changing the scale in the X, Y, Z directions to **0.2**.
+      - Shift the cube to the front of the camera by changing the location in the Z direction to **2**.
     - You may also wish to change the cube's color. Follow the instruction [here](http://mammothinteractive.com/changing-a-cubes-color-unity-tutorial/).
    
 11. Adding Bounding Box and Manipulation Handler to your Cube in the scene
@@ -190,21 +199,22 @@ You can find an overview of the tools required over [here](https://docs.microsof
        
 12. Adding RosConnector to your Unity scene
     - Under the SampleScene on the left, right click and `Create Empty`.
-    - Right click on your newly created GameObject and rename it to **RosConnector**.
-    - Click on `RosConnector`. On the right, under `Inspector`, you should only see `Transform` for now. Click on `Add Component` and add the following:
+    - Right click on your newly created `GameObject` and rename it to **RosConnector**.
+    - Click on `RosConnector` to ensure that we are modifying its properties. On the right, under `Inspector`, you should only see `Transform` for now. Click on `Add Component` and add the following:
       - `Pose Publisher`
       - `Scale Publisher`
-    - `Ros Connector` should be automatically added for you.
-    - `Pose Publisher (Script)` and `Scale Publisher (Script)` are scripts that help to publish information from HoloLens to ROS. A separate script must be written for different ROS message types. In this case, `Pose Publisher (Script)` publishes a [Pose Message](https://docs.ros.org/api/geometry_msgs/html/msg/Pose.html). The topic that is published can be changed under `Topic`.
+    - `Ros Connector (Script)` should be automatically added as a component for you.
+      - `Pose Publisher (Script)` and `Scale Publisher (Script)` are scripts that help to publish information from HoloLens to ROS. A separate script must be written for different ROS message types. In this case, `Pose Publisher (Script)` publishes a [Pose Message](https://docs.ros.org/api/geometry_msgs/html/msg/Pose.html). The topic that is published can be changed under `Topic`.
 
 13. Adding the Cube's Transform to the publishers
-    - Drag and drop your `Cube` from the SampleScene on the left to the `Published Transform` on the right under `Pose Publisher`. Do the same for `Scale Publisher`.
-    - Modify your topic for `Pose Publisher` to be **/pose**. This is the topic that we subscribe to in ROS later on.
-    - Modify your topic for `Scale Publisher` to be **/scale**. This is the topic that we subscribe to in ROS later on.
-    - Under `Pose Publisher`, you should see the following now:
+    -  Ensure that `RosConnector` is still selected under the SampleScene on the left so that we are modifying the properties for it.
+    - Drag and drop your `Cube` from the SampleScene on the left to the `Published Transform` on the right under `Pose Publisher (Script)`. Do the same for `Scale Publisher (Script)`.
+    - Set your topic for `Pose Publisher` to be **/pose**. This is the topic that we subscribe to in ROS later on.
+    - Set your topic for `Scale Publisher` to be **/scale**. This is the topic that we subscribe to in ROS later on.
+    - Under `Pose Publisher (Script)`, you should see the following now:
       - `Topic`: /pose
       - `Published Transform`: Cube (Transform)
-    - Under `Scale Publisher`, you should see the following now:
+    - Under `Scale Publisher (Script)`, you should see the following now:
       - `Topic`: /scale
       - `Published Transform`: Cube (Transform)
 
@@ -214,7 +224,7 @@ You can find an overview of the tools required over [here](https://docs.microsof
 15. Modifying IP address under `ROSConnector` in Unity
     - Ensure that `RosConnector` is still selected under the SampleScene on the left so that we are modifying the properties for it.
     - Under `Inspector` on the right, copy and paste the IP address under `Ros Connector (Script)` > `Ros Bridge Server Url` and append `port 9090`. For example, it could be `ws://192.168.137.66:9090`.
-    - `Ros Connector (Script)` is used to identify the IP address of our Ubuntu OS that is deployed in Hyper-V. 
+      - `Ros Connector (Script)` is used to identify the IP address of the machine running ROS. 
     - Additionally under `Protocol`, ensure that `Web Socket UWP` is selected.
     - Under `Ros Connector (Script)`, you should see the following now:
       - `Timeout`: 10
@@ -223,18 +233,19 @@ You can find an overview of the tools required over [here](https://docs.microsof
       - `Ros Bridge Server Url`: ws://192.168.137.66:9090 (**depending on your IP address**)
       
 16. Building the HoloLens App from Unity
-    - We are finally ready to build the app. Before exporting your app, remember to save your SampleScene in Unity so that we can continue modifying the app next time.
+    - We are finally ready to build the app. Before exporting your app, remember to **save** your SampleScene in Unity so that we can continue modifying the app next time.
     - Under `File` > `Build Settings`, ensure `Universal Windows Platform` is selected as the build platform and click on `Build`. When the prompt for the file location appears, create a new folder called `App`, select it and click `Select Folder`.
 
 17. Obtaining the sample ROS files
     - Download and extract this current [repository](https://github.com/armlabstanford/mixed_reality_setup).
-    - Place the `box_demo` package in the `src` folder of your Catkin workspace in Ubuntu, then build by running `$ catkin_make` from the root folder of your catkin workspace. (Your catkin workspace is found in the home directory of the Ubuntu VM, and is usually called catkin_ws).
+    - Place the `box_demo` package found in this repository in the `src` folder of your Catkin workspace in Ubuntu, then build by running `$ catkin_make` from the root folder of your catkin workspace. (Your catkin workspace is found in the home directory of the Ubuntu VM, and is usually called catkin_ws).
+      - The `box_demo` package contains a files and scripts to publish the location of the box as a marker.
     - In the directory `box_demo/scripts` make the file `marker.py` executable by running
       ```
       chmod +x marker.py
       ```
 
-18. Running ROS in Ubuntu
+18. Running ROS in *Ubuntu*
     - Open terminal in Ubuntu and run the following command:
       ```
       $ roslaunch box_demo box.launch
@@ -244,7 +255,12 @@ You can find an overview of the tools required over [here](https://docs.microsof
     - Under the `App` folder of your Unity project, you should now see a `demo.sln`. Double click on it to open it in Visual Studio.
     - In Visual Studio top menu bar, change to `Release`, `x86` and `HoloLens Emulator 10.0.x`. Then click on the green Play button located on the left of `HoloLens Emulator 10.0.x`.
     - Once the emulator is running, you should see `Client connected.  1 clients total.` in your Ubuntu terminal.
-    - Use the arrow keys (to move user's gaze) and WASD (to walk around) in the emulator and find the box. Using your spacebar, you can pick the box and place it elsewhere by using the spacebar to drop it off. The location of the box in `rviz` should also update as you move the box around.
+    - The keyboard commands for the HoloLens emulator can be found [here](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator#basic-emulator-input).
+      - Use the arrow keys (to move user's gaze) and WASD (to walk around) in the emulator and find the box. 
+      - Left click on the mouse and move it around to control your gaze more precisely.
+      - Right click or press Spacebar / Enter to simulate an air tap gesture. 
+    - For example to move the box, position your cursor to the center of the box. Then, right click two times and move your mouse around.
+      - The location of the box in `rviz` should also update as you move the box around.
 
 ## Troubleshooting tips
 **Q: I managed to build the HoloLens app and run it in the emulator but it is not connecting with ROS.**
@@ -262,3 +278,4 @@ A quick fix is proposed by other users:
 - Delete the `JsonDotNet` folder under `Assets` to prevent multiple copies of `Newtonsoft.Json.XML` and `Newtonsoft.Json.dll`.
 
 **NOTE**: You shouldn't have to do this if you followed the instruction for [Step 9](#building-your-first-hololens-app-and-communicating-with-ros).
+
