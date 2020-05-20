@@ -5,25 +5,26 @@ For ARCORE-Unity-Android Development refer to android branch.
 # Getting Started with ROS-HoloLens communication
 
 This page is organized with the following sections:
+- [Introduction](#introduction)
 - [Software installation](#software-installation)
   - [Installing Ubuntu OS and ROS on Windows OS using Hyper-V](#installing-ubuntu-os-and-ros-on-windows-os-using-hyper-v)
-  - [Installing Visual Studios, HoloLens emulator, Unity and Mixed Reality Toolkit](#installing-visual-studios-hololens-emulator-unity-and-mixed-reality-toolkit)
+  - [Installing Visual Studio, HoloLens emulator, Unity and Mixed Reality Toolkit](#installing-visual-studio-hololens-emulator-unity-and-mixed-reality-toolkit)
 - [Building your first HoloLens app and communicating with ROS](#building-your-first-hololens-app-and-communicating-with-ros)
 - [Troubleshooting tips](#troubleshooting-tips)
 
+## Introduction
 [ROS#](https://github.com/siemens/ros-sharp) is an open-source library that allows us to communicate with [ROS](https://www.ros.org/) from [Unity](https://unity.com/), a game engine that is used to develop augmented reality content for devices such as Microsoft's [HoloLens](https://www.microsoft.com/en-us/hololens). 
 
 Part of this section is adapted from the [official page](https://github.com/siemens/ros-sharp) of the ROS# library.
+
+## Software installation
+You can find an overview of the tools required for developing apps on the HoloLens over [here](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools). Alternatively, you may follow the steps below for a more detailed instruction.
 
 **Requirements**: Windows 10 Enterprise, Pro, or Education
 - Windows 10 Home will **NOT** work because [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/) is required for HoloLens Emulator.
   - Hyper-V is also capable of running VMs such as Ubuntu OS. We recommend using Hyper-V to run Ubuntu OS because other VMs (e.g. Virtual Box / VMWare) do not work once Hyper-V is enabled. [Why?](https://seriouscodeblog.wordpress.com/2017/02/21/and-you-can-write-hololens-apps-in-macos-linux-too-part-1/)
 - If you are from Stanford, you can obtain a free copy of Windows 10 Education from [here](https://stanford.onthehub.com/WebStore/Welcome.aspx). Sign in (top right) with your SUNet ID and search for "windows 10 education" in the top box. Add to cart and check out, you should obtain a product key.
-
-*Note*: If you already have Windows 10 installed in your machine, you can simply upgrade to Windows 10 Education by manually entering in the product key as listed [here](https://docs.microsoft.com/en-us/windows/deployment/upgrade/windows-10-edition-upgrades#upgrade-by-manually-entering-a-product-key).
-
-## Software installation
-You can find an overview of the tools required for developing apps on the HoloLens over [here](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools). Alternatively, you may follow the steps below for a more detailed instruction.
+  - If you already have Windows 10 installed in your machine, you can simply upgrade to Windows 10 Education by manually entering in the product key as listed [here](https://docs.microsoft.com/en-us/windows/deployment/upgrade/windows-10-edition-upgrades#upgrade-by-manually-entering-a-product-key).
 
 ### Installing Ubuntu OS and ROS on Windows OS using Hyper-V
 1. [Turning on Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v#enable-the-hyper-v-role-through-settings)
@@ -74,7 +75,7 @@ You can find an overview of the tools required for developing apps on the HoloLe
    $ sudo apt-get install ros-melodic-rosbridge-server
    ```
 
-### Installing Visual Studios, HoloLens emulator, Unity and Mixed Reality Toolkit
+### Installing Visual Studio, HoloLens emulator, Unity and Mixed Reality Toolkit
 1. If you are planning to use the HoloLens emulator, ensure that you have enabled Hyper-V as described in [Step 1](#software-installation) above.
 
 2. Installing **Visual Studio 2019** on *Windows*
@@ -88,7 +89,7 @@ You can find an overview of the tools required for developing apps on the HoloLe
    - Follow the instructions on this [page](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator) to download and install the emulator.
    
 4. [Testing](https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator#deploying-apps-to-the-hololens-emulator) the HoloLens emulator
-   - Start Visual Studio 2019 and try to create a new `Holographic DirectX 11 App (Universal Windows)`. If it works, then you have all the required libraries in Visual Studios. Otherwise, add the proper workloads as stated [here](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools).
+   - Start Visual Studio 2019 and try to create a new `Holographic DirectX 11 App (Universal Windows)`. If it works, then you have all the required libraries in Visual Studio. Otherwise, add the proper workloads as stated [here](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools).
    - In Visual Studio, ensure that Platform is set to `x86` on the top bar. 
    - On the right of `x86`, there should be a green play button with a drop-down menu. Select `HoloLens Emulator` under the drop-down menu as the target device for debugging.
    - Click on the green play button to run the emulator.
