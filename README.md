@@ -163,7 +163,7 @@ You can find an overview of the tools required for developing apps on the HoloLe
    - We recommend only importing **Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage** for now to reduce the size of the file later on.
 
 6. Importing ROS# (**UWP version**) to your Unity project
-   - Download the file [here](https://github.com/dwhit/ros-sharp).
+   - Download the file [here](https://github.com/armlabstanford/ros-sharp).
    - Unzip the file and you will find a package called `RosSharp` under `ros-sharp-master/Unity3D/Assets`. 
    - To put the `RosSharp` folder inside your Unity project, you can either drag and drop it into the Assets window in the Unity editor, or locate the file location of your project using your Windows File Explorer and place it there.
    
@@ -266,7 +266,7 @@ You can find an overview of the tools required for developing apps on the HoloLe
 ## Troubleshooting tips
 **Q: I managed to build the HoloLens app and run it in the emulator but it is not connecting with ROS.**
 
-**A**: Ensure that `Web Socket UWP` is selected in Unity (under your current scene > `ROSConnector` > `Protocol`). The original [ROS#](https://github.com/siemens/ros-sharp) is written for NET application whereas HoloLens is a UWP platform. Luckily, there is a UWP version of ROS# [here](https://github.com/dwhit/ros-sharp) which has been imported into the sample Unity `Box` project found in this repository. If you are interested, read this [thread](https://github.com/siemens/ros-sharp/issues/33) for more information.
+**A**: Ensure that `Web Socket UWP` is selected in Unity (under your current scene > `ROSConnector` > `Protocol`). The original [ROS#](https://github.com/siemens/ros-sharp) is written for NET application whereas HoloLens is a UWP platform. Luckily, there is a UWP version of ROS# [here](https://github.com/armlabstanford/ros-sharp) which has been imported into the sample Unity `Box` project found in this repository. If you are interested, read this [thread](https://github.com/siemens/ros-sharp/issues/33) for more information.
 
 **Q: My HoloLens client is connected to ROS but no message is being transmitted.**
 
@@ -279,4 +279,3 @@ A quick fix is proposed by other users:
 - Delete the `JsonDotNet` folder under `Assets` to prevent multiple copies of `Newtonsoft.Json.XML` and `Newtonsoft.Json.dll`.
 
 **NOTE**: You shouldn't have to do this if you followed the instruction for [Step 9](#building-your-first-hololens-app-and-communicating-with-ros).
-
