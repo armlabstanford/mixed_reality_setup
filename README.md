@@ -97,23 +97,25 @@ You can find an overview of the tools required for developing apps on the HoloLe
    
 5. Installing **Unity** editor on *Windows*
    - [Download](https://unity3d.com/get-unity/download) and install Unity Hub.
-   - Open up Unity Hub. Under `Installs` on the left, click `Add` and install the `2018.4.x` version.
+   - Open up Unity Hub. Under `Installs` on the left, click `Add` and install the latest stable version.
    - Ensure that you select the following modules:
      - `UWP Build Support (IL2CPP)`
      - `UWP Build Support (.NET)`
 
-6. Downloading **Mixed Reality Toolkit (MRTK)**
-   - [MRTK](https://github.com/microsoft/MixedRealityToolkit-Unity) provides the basic building blocks for Unity development on HoloLens and includes a wide range of prefabs and scripts.
-   - Go to [MRTK release page](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases).
-   - Under `Assets`, download:
-     - `Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage`
-     - **(Optional)** `Microsoft.MixedRealityToolkit.Unity.Extensions.unitypackage`
-     - **(Optional)** `Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage`
-     - **(Optional)** `Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage`
+6. Downloading **Mixed Reality Toolkit (MRTK)** 
+   - [MRTK](https://github.com/microsoft/MixedRealityToolkit-Unity) provides the basic building blocks for Unity development on HoloLens and includes a wide range of prefabs and scripts. If you are using Unity 2019.4 *or newer*, the [Mixed Reality Feature Tool](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/unity/welcome-to-mr-feature-tool) is the recommended way to import MRTK into your Unity project.
+	   - Follow Steps 1-3 of [this Microsoft MRTK Beginner Tutorial](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/unity/tutorials/mr-learning-base-02?tabs=openxr) to create a new Unity project and import MRTK into it. You will be prompted to apply some recommended settings and restart Unity -- click 'Yes'.
+   - For Unity version *older than 2019.4*
+	   - Go to [MRTK release page](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases).
+	   - Under `Assets`, download:
+	     - `Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage`
+	     - **(Optional)** `Microsoft.MixedRealityToolkit.Unity.Extensions.unitypackage`
+	     - **(Optional)** `Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage`
+	     - **(Optional)** `Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage`
 
 ## Building your first HoloLens app and communicating with ROS
 
-### Current set-up:
+### Set-up 1:
 - Host OS: Windows 10 Education
 - Ubuntu 18.04 running on Hyper-V
 - Unity 2018.4.x
