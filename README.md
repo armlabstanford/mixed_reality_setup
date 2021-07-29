@@ -10,6 +10,7 @@ This page is organized with the following sections:
   - [Installing Ubuntu OS and ROS on Windows OS using Hyper-V](#installing-ubuntu-os-and-ros-on-windows-os-using-hyper-v)
   - [Installing Visual Studio, HoloLens emulator, Unity and Mixed Reality Toolkit](#installing-visual-studio-hololens-emulator-unity-and-mixed-reality-toolkit)
 - [Building your first HoloLens app and communicating with ROS](#building-your-first-hololens-app-and-communicating-with-ros)
+- [Accessing the Hololens front camera and streaming camera data to ROS]
 - [Troubleshooting tips](#troubleshooting-tips)
 
 ## Introduction
@@ -115,7 +116,7 @@ You can find an overview of the tools required for developing apps on the HoloLe
 
 ## Building your first HoloLens app and communicating with ROS
 
-### Set-up 1:
+### Example set-up 1:
 - Host OS: Windows 10 Education
 - Ubuntu 18.04 running on Hyper-V
 - Unity 2018.4.x
@@ -264,6 +265,18 @@ You can find an overview of the tools required for developing apps on the HoloLe
       - Right click or press Spacebar / Enter to simulate an air tap gesture. 
     - For example to move the box, position your cursor to the center of the box. Then, right click two times and move your mouse around.
       - The location of the box in `rviz` should also update as you move the box around.
+
+## Accessing the Hololens front camera and streaming camera data to ROS
+
+### Tested on:
+Unity 2020.3.14f1
+MRTK 2.6.1
+Hololens 2
+RosSharp accessed 20 July 2021
+
+### Notes on C# scripts 
+- The `ImagePublisher.cs` script in ROS# (located in `Assets`>`RosSharp`>`Scripts`>`RosBridgeClient`>`RosCommuncation`) contains code to initialize and publish a ROS message containing a compressed image encoded from an image stored as a [Texture2D](https://docs.unity3d.com/ScriptReference/Texture2D.html) object. However, it uses a [Unity camera](https://docs.unity3d.com/Manual/class-Camera.html) as the source of the image, and sets the publishing function as its [callback](https://docs.unity3d.com/ScriptReference/Camera-onPostRender.html) so that the ROS message is published every time the camera renders. The concept of this camera is different from the hardware camera on the Hololens: in a Unity app, a "camera" *displays* a virtual world to the user. 
+- Instead, to obtain the image seen by the front camera, we use the [WebCamTexture class](https://docs.unity3d.com/ScriptReference/WebCamTexture.html), as demonstrated by Peter Koch [here](https://www.youtube.com/watch?v=q96sVKLhjdg). Then we modify the `ImagePublisher` script (the modified script is in `WebcamPublisher.cs`) to publish this image instead. 
 
 ## Troubleshooting tips
 **Q: I managed to build the HoloLens app and run it in the emulator but it is not connecting with ROS.**
