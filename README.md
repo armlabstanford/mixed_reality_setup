@@ -10,7 +10,7 @@ This page is organized with the following sections:
   - [Installing Ubuntu OS and ROS on Windows OS using Hyper-V](#installing-ubuntu-os-and-ros-on-windows-os-using-hyper-v)
   - [Installing Visual Studio, HoloLens emulator, Unity and Mixed Reality Toolkit](#installing-visual-studio-hololens-emulator-unity-and-mixed-reality-toolkit)
 - [Building your first HoloLens app and communicating with ROS](#building-your-first-hololens-app-and-communicating-with-ros)
-- [Accessing the Hololens front camera and streaming camera data to ROS]
+- [Accessing the Hololens front camera and streaming camera data to ROS](#accessing-the-hololens-front-camera-and-streaming-camera-data-to-ROS)
 - [Troubleshooting tips](#troubleshooting-tips)
 
 ## Introduction
@@ -282,7 +282,7 @@ You can find an overview of the tools required for developing apps on the HoloLe
 
 ### Instructions
 1. From this current [repository](https://github.com/armlabstanford/mixed_reality_setup), open the `Unity scripts` subdirectory, and add the file 'Unity `WebcamPublisher.cs` to your `Assets` folder (you may place it within `Assets/RosSharp/Scripts/RosBridgeClient/RosCommuncation`).
-2. Create a RosConnector game oject, if you have not already done so, and configure it with the IP address of your Ubuntu machine (see Steps 12-14 above: [Adding RosConnector to your Unity scene]). 
+2. Create a RosConnector game oject, if you have not already done so, and configure it with the IP address of your Ubuntu machine (see Steps 12-14 [above](#adding-ros-connector-to-your-unity-scene)). 
 3. Add WebcamPublisher as a component to the RosConnector game object (by dragging and dropping the `WecamPublisher.cs` file, or clicking "Add component" and selecting it from the dropdown menu). 
 4. Specify a name for the ROS topic under `Topic` and append `/compressed` after it. 
 5. To test, start a ROS node on the Ubuntu machine, type `rqt` in the terminal, and open Image View. Build the app in Unity, and deploy it to an actual Hololens (not emulator; find instructions [here](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/platform-capabilities-and-apis/using-visual-studio?tabs=hl2)).
