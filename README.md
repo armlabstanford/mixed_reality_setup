@@ -116,12 +116,14 @@ You can find an overview of the tools required for developing apps on the HoloLe
 
 ## Building your first HoloLens app and communicating with ROS
 
-### Example set-up 1:
+### Tested on:
 - Host OS: Windows 10 Education
 - Ubuntu 18.04 running on Hyper-V
 - Unity 2018.4.x
 - Visual Studio 2019 Community
 - [Windows SDK 18362](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk/)
+
+### Instructions
 
 *Note*: You'll have to complete the set-up described [above](#software-installation) before continuing with this section.
 
@@ -174,7 +176,7 @@ You can find an overview of the tools required for developing apps on the HoloLe
    
 7. Installing additional scripts to your Unity project
    - Download and extract this current [repository](https://github.com/armlabstanford/mixed_reality_setup).
-   - Under `Unity scripts`, you should see 3 scripts.
+   - Under `Unity scripts`, you should see 3 scripts named `PosePublisher.cs`, `PoseSubscriber.cs` and `ScalePublisher.cs`.
    - Place the 3 scripts inside your Unity project under `Assets/RosSharp/Scripts/RosBridgeClient/RosCommuncation`.
 
 8. Adding Mixed Reality Toolkit to the scene
@@ -210,7 +212,21 @@ You can find an overview of the tools required for developing apps on the HoloLe
     - `Ros Connector (Script)` should be automatically added as a component for you.
       - `Pose Publisher (Script)` and `Scale Publisher (Script)` are scripts that help to publish information from HoloLens to ROS. A separate script must be written for different ROS message types. In this case, `Pose Publisher (Script)` publishes a [Pose Message](https://docs.ros.org/api/geometry_msgs/html/msg/Pose.html). The topic that is published can be changed under `Topic`.
 
-13. Adding the Cube's Transform to the publishers
+13. Finding the IP address of your Ubuntu machine
+    - Find the IP address of your Ubuntu OS by using the `$ ifconfig` command in an Ubuntu terminal. If your Network Adapter was set-up correctly in [Step 4](#software-installation) during the installation phase, you should see the IP address listed under `eth0`. For example, it could be `inet 192.168.137.66`.
+    
+14. Modifying IP address under `ROSConnector` in Unity
+    - Ensure that `RosConnector` is still selected under the SampleScene on the left so that we are modifying the properties for it.
+    - Under `Inspector` on the right, copy and paste the IP address under `Ros Connector (Script)` > `Ros Bridge Server Url` and append `port 9090`. For example, it could be `ws://192.168.137.66:9090`.
+      - `Ros Connector (Script)` is used to identify the IP address of the machine running ROS. 
+    - Additionally under `Protocol`, ensure that `Web Socket UWP` is selected.
+    - Under `Ros Connector (Script)`, you should see the following now:
+      - `Timeout`: 10
+      - `Serializer`: JSON
+      - `Protocol`: Web Socket UWP
+      - `Ros Bridge Server Url`: ws://192.168.137.66:9090 (**depending on your IP address**)
+
+15. Adding the Cube's Transform to the publishers
     -  Ensure that `RosConnector` is still selected under the SampleScene on the left so that we are modifying the properties for it.
     - Drag and drop your `Cube` from the SampleScene on the left to the `Published Transform` on the right under `Pose Publisher (Script)`. Do the same for `Scale Publisher (Script)`.
     - Set your topic for `Pose Publisher` to be **/pose**. This is the topic that we subscribe to in ROS later on.
@@ -221,20 +237,6 @@ You can find an overview of the tools required for developing apps on the HoloLe
     - Under `Scale Publisher (Script)`, you should see the following now:
       - `Topic`: /scale
       - `Published Transform`: Cube (Transform)
-
-14. Finding the IP address of your Ubuntu machine
-    - Find the IP address of your Ubuntu OS by using the `$ ifconfig` command in an Ubuntu terminal. If your Network Adapter was set-up correctly in [Step 4](#software-installation) during the installation phase, you should see the IP address listed under `eth0`. For example, it could be `inet 192.168.137.66`.
-    
-15. Modifying IP address under `ROSConnector` in Unity
-    - Ensure that `RosConnector` is still selected under the SampleScene on the left so that we are modifying the properties for it.
-    - Under `Inspector` on the right, copy and paste the IP address under `Ros Connector (Script)` > `Ros Bridge Server Url` and append `port 9090`. For example, it could be `ws://192.168.137.66:9090`.
-      - `Ros Connector (Script)` is used to identify the IP address of the machine running ROS. 
-    - Additionally under `Protocol`, ensure that `Web Socket UWP` is selected.
-    - Under `Ros Connector (Script)`, you should see the following now:
-      - `Timeout`: 10
-      - `Serializer`: JSON
-      - `Protocol`: Web Socket UWP
-      - `Ros Bridge Server Url`: ws://192.168.137.66:9090 (**depending on your IP address**)
       
 16. Building the HoloLens App from Unity
     - We are finally ready to build the app. Before exporting your app, remember to **save** your SampleScene in Unity so that we can continue modifying the app next time.
@@ -269,13 +271,24 @@ You can find an overview of the tools required for developing apps on the HoloLe
 ## Accessing the Hololens front camera and streaming camera data to ROS
 
 ### Tested on:
-Unity 2020.3.14f1
-MRTK 2.6.1
-Hololens 2
-RosSharp accessed 20 July 2021
+- Host OS: Windows 10 Pro
+- Ubuntu 18.04 running on separate machine
+- Unity 2020.3.14f1
+- Visual Studio 2019
+- [Windows SDK 19041](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk/)
+- MRTK 2.6.1
+- Hololens 2
+- RosSharp accessed 20 July 2021
+
+### Instructions
+1. From this current [repository](https://github.com/armlabstanford/mixed_reality_setup), open the `Unity scripts` subdirectory, and add the file 'Unity `WebcamPublisher.cs` to your `Assets` folder (you may place it within `Assets/RosSharp/Scripts/RosBridgeClient/RosCommuncation`).
+2. Create a RosConnector game oject, if you have not already done so, and configure it with the IP address of your Ubuntu machine (see Steps 12-14 above: [Adding RosConnector to your Unity scene]). 
+3. Add WebcamPublisher as a component to the RosConnector game object (by dragging and dropping the `WecamPublisher.cs` file, or clicking "Add component" and selecting it from the dropdown menu). 
+4. Specify a name for the ROS topic under `Topic` and append `/compressed` after it. 
+5. To test, start a ROS node on the Ubuntu machine, type `rqt` in the terminal, and open Image View. Build the app in Unity, and deploy it to an actual Hololens (not emulator; find instructions [here](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/platform-capabilities-and-apis/using-visual-studio?tabs=hl2)).
 
 ### Notes on C# scripts 
-- The `ImagePublisher.cs` script in ROS# (located in `Assets`>`RosSharp`>`Scripts`>`RosBridgeClient`>`RosCommuncation`) contains code to initialize and publish a ROS message containing a compressed image encoded from an image stored as a [Texture2D](https://docs.unity3d.com/ScriptReference/Texture2D.html) object. However, it uses a [Unity camera](https://docs.unity3d.com/Manual/class-Camera.html) as the source of the image, and sets the publishing function as its [callback](https://docs.unity3d.com/ScriptReference/Camera-onPostRender.html) so that the ROS message is published every time the camera renders. The concept of this camera is different from the hardware camera on the Hololens: in a Unity app, a "camera" *displays* a virtual world to the user. 
+- The `ImagePublisher.cs` script in ROS# (located in `Assets/RosSharp/Scripts/RosBridgeClient/RosCommuncation`) contains code to initialize and publish a ROS message containing a compressed image encoded from an image stored as a [Texture2D](https://docs.unity3d.com/ScriptReference/Texture2D.html) object. However, it uses a [Unity camera](https://docs.unity3d.com/Manual/class-Camera.html) as the source of the image, and sets the publishing function as its [callback](https://docs.unity3d.com/ScriptReference/Camera-onPostRender.html) so that the ROS message is published every time the camera renders. The concept of this camera is different from the hardware camera on the Hololens: in a Unity app, a "camera" *displays* a virtual world to the user. 
 - Instead, to obtain the image seen by the front camera, we use the [WebCamTexture class](https://docs.unity3d.com/ScriptReference/WebCamTexture.html), as demonstrated by Peter Koch [here](https://www.youtube.com/watch?v=q96sVKLhjdg). Then we modify the `ImagePublisher` script (the modified script is in `WebcamPublisher.cs`) to publish this image instead. 
 
 ## Troubleshooting tips
