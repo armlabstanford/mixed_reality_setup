@@ -282,11 +282,12 @@ You can find an overview of the tools required for developing apps on the HoloLe
 - RosSharp accessed 20 July 2021
 
 ### Instructions
-1. From this current [repository](https://github.com/armlabstanford/mixed_reality_setup), open the `Unity scripts` subdirectory, and add the file `WebcamPublisher.cs` to your `Assets` folder (you may place it within `Assets/RosSharp/Scripts/RosBridgeClient/RosCommuncation`, or directly in `Assets`).
-2. Create a RosConnector game oject, if you have not already done so, and configure it with the IP address of your Ubuntu machine (see Steps 12-14 [above](#adding-ros-connector-to-your-unity-scene)). 
-3. Add WebcamPublisher as a component to the RosConnector game object (by dragging and dropping the `WecamPublisher.cs` file, or clicking "Add component" and selecting it from the dropdown menu). 
-4. Specify a name for the ROS topic under `Topic` and append `/compressed` after it. 
-5. To test, start a ROS node on the Ubuntu machine, type `rqt` in the terminal, and open Image View. Build the app in Unity, and deploy it to an actual Hololens (not emulator; find instructions [here](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/platform-capabilities-and-apis/using-visual-studio?tabs=hl2)).
+1. In `Edit`>`Project Settings`>`Player`>`Publishing Settings`, enable `WebCam` by clicking the checkbox if it is unchecked.
+2. From this current [repository](https://github.com/armlabstanford/mixed_reality_setup), open the `Unity scripts` subdirectory, and add the file `WebcamPublisher.cs` to your `Assets` folder (you may place it within `Assets/RosSharp/Scripts/RosBridgeClient/RosCommuncation`, or directly in `Assets`).
+3. Create a RosConnector game oject, if you have not already done so, and configure it with the IP address of your Ubuntu machine (see Steps 12-14 [above](#adding-ros-connector-to-your-unity-scene)). 
+4. Add WebcamPublisher as a component to the RosConnector game object (by dragging and dropping the `WecamPublisher.cs` file, or clicking "Add component" and selecting it from the dropdown menu). 
+5. Specify a name for the ROS topic under `Topic` and append `/compressed` after it. 
+6. To test, start a ROS node on the Ubuntu machine, type `rqt` in the terminal, and open Image View. Build the app in Unity, and deploy it to an actual Hololens (not emulator; find instructions [here](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/platform-capabilities-and-apis/using-visual-studio?tabs=hl2)).
 
 ### Notes on C# scripts 
 - The `ImagePublisher.cs` script in ROS# (located in `Assets/RosSharp/Scripts/RosBridgeClient/RosCommuncation`) contains code to initialize and publish a ROS message containing a compressed image encoded from an image stored as a [Texture2D](https://docs.unity3d.com/ScriptReference/Texture2D.html) object. However, it uses a [Unity camera](https://docs.unity3d.com/Manual/class-Camera.html) as the source of the image, and sets the publishing function as its [callback](https://docs.unity3d.com/ScriptReference/Camera-onPostRender.html) so that the ROS message is published every time the camera renders. The concept of this camera is different from the hardware camera on the Hololens: in a Unity app, a "camera" *displays* a virtual world to the user. 
