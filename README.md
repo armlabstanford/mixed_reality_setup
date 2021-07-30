@@ -284,7 +284,7 @@ You can find an overview of the tools required for developing apps on the HoloLe
 ### Instructions
 1. In `Edit`>`Project Settings`>`Player`>`Publishing Settings`, enable `WebCam` by clicking the checkbox if it is unchecked.
 2. From this current [repository](https://github.com/armlabstanford/mixed_reality_setup), open the `Unity scripts` subdirectory, and add the file `WebcamPublisher.cs` to your `Assets` folder (you may place it within `Assets/RosSharp/Scripts/RosBridgeClient/RosCommuncation`, or directly in `Assets`).
-3. Create a RosConnector game oject, if you have not already done so, and configure it with the IP address of your Ubuntu machine (see Steps 12-14 [above](#adding-ros-connector-to-your-unity-scene)). 
+3. Create a RosConnector game oject, if you have not already done so, and configure it with the IP address of your Ubuntu machine (see Steps 12-14 [above](https://github.com/armlabstanford/mixed_reality_setup/blob/master/README.md#building-your-first-hololens-app-and-communicating-with-ros). 
 4. Add WebcamPublisher as a component to the RosConnector game object (by dragging and dropping the `WebcamPublisher.cs` file, or clicking "Add component" and selecting it from the dropdown menu). 
 5. Specify a name for the ROS topic under `Topic` and append `/compressed` after it. 
 6. To test, run `roscore` on the Ubuntu machine, type `rqt` in the terminal, and open Image View. Build the app in Unity, and deploy it to an actual Hololens (not emulator; find instructions [here](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/platform-capabilities-and-apis/using-visual-studio?tabs=hl2)).
