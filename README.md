@@ -281,7 +281,7 @@ You can find an overview of the tools required for developing apps on the HoloLe
 - RosSharp accessed 20 July 2021
 
 ### Instructions
-1. From this current [repository](https://github.com/armlabstanford/mixed_reality_setup), open the `Unity scripts` subdirectory, and add the file 'Unity `WebcamPublisher.cs` to your `Assets` folder (you may place it within `Assets/RosSharp/Scripts/RosBridgeClient/RosCommuncation`).
+1. From this current [repository](https://github.com/armlabstanford/mixed_reality_setup), open the `Unity scripts` subdirectory, and add the file `WebcamPublisher.cs` to your `Assets` folder (you may place it within `Assets/RosSharp/Scripts/RosBridgeClient/RosCommuncation`).
 2. Create a RosConnector game oject, if you have not already done so, and configure it with the IP address of your Ubuntu machine (see Steps 12-14 [above](#adding-ros-connector-to-your-unity-scene)). 
 3. Add WebcamPublisher as a component to the RosConnector game object (by dragging and dropping the `WecamPublisher.cs` file, or clicking "Add component" and selecting it from the dropdown menu). 
 4. Specify a name for the ROS topic under `Topic` and append `/compressed` after it. 
