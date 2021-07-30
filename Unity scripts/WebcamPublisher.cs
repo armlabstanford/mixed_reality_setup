@@ -1,4 +1,9 @@
 /*
+Original code from Siemens AG modified by Shivani Guptasarma, 2021.
+WebCamTexture code from Peter Koch, 2017 https://www.youtube.com/watch?v=q96sVKLhjdg
+*/
+
+/*
 © CentraleSupelec, 2017
 Author: Dr. Jeremy Fix (jeremy.fix@centralesupelec.fr)
 
@@ -40,6 +45,7 @@ namespace RosSharp.RosBridgeClient
         {
             base.Start();
 
+            //the following code accesses webcam and configures capture
             WebCamDevice[] devices = WebCamTexture.devices;
             for (int i = 0; i < devices.Length; i++)
                 Debug.Log(devices[i].name);
@@ -47,20 +53,22 @@ namespace RosSharp.RosBridgeClient
             webcam = new WebCamTexture(devices[0].name);
             webcam.Play();
             Debug.LogFormat("webcam: {0} {1} x {2}", webcam.deviceName, webcam.width, webcam.height);
-            //data = new Color32[webcam.width * webcam.height];
             webcamImage = new Texture2D(webcam.width, webcam.height);
 
+            //modified from original
             //InitializeGameObject();
             InitializeMessage();
-            //Camera.onPostRender += UpdateImage;
+            //Camera.onPostRender += UpdateImage; //we don't want Unity camera
             UpdateMessage();
         }
 
+        //run in every frame (to replace camera callback)
         private void Update()
         {
             UpdateMessage();
         }
 
+        //modified from original:
         /*private void UpdateImage(Camera _camera)
         {
             if (texture2D != null && _camera == this.ImageCamera)
